@@ -77,7 +77,7 @@ $ bash tools/init.sh
 $ bundle exec jekyll s
 ```
 
-然后在浏览器中访问 <http://localhost:4000>。
+然后在浏览器中访问 `http://localhost:4000`。
 
 ### 使用 Docker 运行
 

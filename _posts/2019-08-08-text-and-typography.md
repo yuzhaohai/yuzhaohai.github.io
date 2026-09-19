@@ -76,7 +76,7 @@ image: /assets/img/sample/devices-mockup.png
 
 ## 链接
 
-<http://127.0.0.1:4000>
+`http://127.0.0.1:4000`
 
 
 ## 脚注
