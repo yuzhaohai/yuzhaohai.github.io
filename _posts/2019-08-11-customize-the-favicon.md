@@ -1,39 +1,38 @@
 ---
-title: Customize the Favicon
-author: Cotes Chung
+title: 自定义站点图标
+author: 于兆海
 date: 2019-08-11 00:34:00 +0800
-categories: [Blogging, Tutorial]
-tags: [favicon]
+categories: [博客, 教程]
+tags: [图标]
 toc: false
 ---
 
-In [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/), the image files of [Favicons](https://www.favicon-generator.org/about/) are placed in `assets/img/favicons/`. You may need to replace them with your own. So let's see how to customize these Favicons.
+在 [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) 中，[Favicons](https://www.favicon-generator.org/about/)（站点图标）的图片文件位于 `assets/img/favicons/` 目录。你可能需要用自己制作的图标替换它们。下面来看看如何自定义这些图标。
 
-With a square image (PNG, JPG or GIF) in hand, open the site [*Favicon & App Icon Generator*](https://www.favicon-generator.org/) and upload your original image.
+准备好一张方形图片（PNG、JPG 或 GIF），打开 [*Favicon & App Icon Generator*](https://www.favicon-generator.org/) 网站并上传你的原始图片。
 
 ![upload-image](/assets/img/sample/upload-image.png)
 
-Click button <kbd>Create Favicon</kbd> and wait a moment for the website to generate the icons of various sizes automatically.
+点击 <kbd>Create Favicon</kbd> 按钮，稍等片刻，网站会自动生成各种尺寸的图标。
 
 ![download-icons](/assets/img/sample/download-icons.png){: width="600"}
 
-Download the generated package, unzip and delete the following two from the extracted files:
+下载生成的压缩包，解压后从解压出的文件中删除以下两个文件：
 
 - browserconfig.xml
 - manifest.json
- 
-Now, copy the remaining image files (`.PNG` and `.ICO`) from the extracted `.zip` file to cover the original files in the folder `assets/img/favicons/`.
 
-The following table helps you understand the changes to the icon file:
+现在，将解压出的 `.zip` 文件中剩余的图片文件（`.PNG` 和 `.ICO`）复制到 `assets/img/favicons/` 文件夹中，覆盖原有文件。
 
-> ✓ means keep, ✗ means delete.
+下表帮助你了解图标文件的变更：
 
-| File(s)             | From Favicon & App Icon Generator | From Chirpy |
+> ✓ 表示保留，✗ 表示删除。
+
+| 文件                 | 来自 Favicon & App Icon Generator | 来自 Chirpy |
 |---------------------|:---------------------------------:|:-----------:|
 | `*.PNG`             | ✓                                 | ✗           |
 | `*.ICO`             | ✓                                 | ✗           |
 | `browserconfig.xml` | ✗                                 | ✓           |
 | `manifest.json`     | ✗                                 | ✓           |
 
-
-The next time you build the site, the icon will be replaced with a customized edition.
+下次构建站点时，图标将替换为自定义版本。

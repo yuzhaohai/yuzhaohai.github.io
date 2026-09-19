@@ -34,7 +34,12 @@
       {% elsif page.dynamic_title %}
         {{- page.title -}}
       {% else %}
-        {{- page.layout | capitalize -}}
+        {%- case page.layout -%}
+          {%- when 'post' -%}文章
+          {%- when 'tag' -%}标签
+          {%- when 'category' -%}分类
+          {%- else -%}{{ page.layout | capitalize }}
+        {%- endcase -%}
       {% endif %}
     </div>
 
@@ -45,7 +50,7 @@
         aria-label="search" placeholder="{{ site.data.label.search_hint }}...">
       <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
     </span>
-    <span id="search-cancel" >Cancel</span>
+    <span id="search-cancel" >取消</span>
   </div>
 
 </div>

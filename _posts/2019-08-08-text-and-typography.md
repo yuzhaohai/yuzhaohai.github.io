@@ -1,122 +1,122 @@
 ---
-title: Text and Typography
-author: Cotes Chung
+title: 文本与排版
+author: 于兆海
 date: 2019-08-08 11:33:00 +0800
-categories: [Blogging, Demo]
-tags: [typography]
+categories: [博客, 演示]
+tags: [排版]
 math: true
 mermaid: true
 image: /assets/img/sample/devices-mockup.png
 ---
 
-This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
+这篇文章用于展示 [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork) 上的 Markdown 语法渲染效果，你也可以将其作为写作示例。现在，让我们开始看看文本与排版。
 
 
-## Titles
+## 标题
 ---
-# H1 - heading
+# H1 - 一级标题
 
-<h2 data-toc-skip>H2 - heading</h2>
+<h2 data-toc-skip>H2 - 二级标题</h2>
 
-<h3 data-toc-skip>H3 - heading</h3>
+<h3 data-toc-skip>H3 - 三级标题</h3>
 
-<h4>H4 - heading</h4>
+<h4>H4 - 四级标题</h4>
 ---
 <br>
 
-## Paragraph
+## 段落
 
-I wandered lonely as a cloud
+我孤独地漫游，像一朵云
 
-That floats on high o'er vales and hills,
+在幽谷与山巅之间飘荡，
 
-When all at once I saw a crowd,
+忽然间我看见一群，
 
-A host, of golden daffodils;
+一片金色的水仙花；
 
-Beside the lake, beneath the trees,
+在湖畔，在树下，
 
-Fluttering and dancing in the breeze.
+迎着微风起舞翩翩。
 
-## List
+## 列表
 
-### Ordered list
+### 有序列表
 
-1. Firstly
-2. Secondly
-3. Thirdly
+1. 第一项
+2. 第二项
+3. 第三项
 
-### Unordered list
+### 无序列表
 
-- Chapter
-	- Setcion
-      - Paragraph
+- 章
+	- 节
+      - 段
 
-### Checkbox list
+### 复选框列表
 
-- [ ] TODO
-- [x] Completed
-- Hold on
-- [ ] Defeat COVID-19
-  - [x] Vaccine production
-  - [ ] Economic recovery
-  - [ ] People smile again
+- [ ] 待办事项
+- [x] 已完成
+- 稍等
+- [ ] 战胜 COVID-19
+  - [x] 疫苗生产
+  - [ ] 经济复苏
+  - [ ] 人们再次微笑
 
-## Block Quote
+## 引用
 
-> This line to shows the Block Quote.
+> 此行用于展示引用效果。
 
-## Tables
+## 表格
 
-| Company                      | contact          | Country |
-|:-----------------------------|:-----------------|--------:|
-| Alfreds Futterkiste          | Maria Anders     | Germany |
-| Island Trading               | Helen Bennett    | UK      |
-| Magazzini Alimentari Riuniti | Giovanni Rovelli | Italy   |
+| 公司                         | 联系人           | 国家 |
+|:-----------------------------|:-----------------|-----:|
+| Alfreds Futterkiste          | Maria Anders     | 德国 |
+| Island Trading               | Helen Bennett    | 英国 |
+| Magazzini Alimentari Riuniti | Giovanni Rovelli | 意大利 |
 
-## Link
+## 链接
 
 <http://127.0.0.1:4000>
 
 
-## Footnote
+## 脚注
 
-Click the hook will locate the footnote[^footnote].
+点击该钩子可以定位到脚注[^footnote]。
 
 
-## Images
+## 图片
 
-- Default (with caption)
+- 默认（带说明文字）
 
 ![Desktop View](/assets/img/sample/mockup.png)
-_Full screen width and center alignment_
+_全屏宽度且居中显示_
 
 <br>
 
-- Specify width
+- 指定宽度
 
 ![Desktop View](/assets/img/sample/mockup.png){: width="400"}
-_400px image width_
+_400px 图片宽度_
 
 <br>
 
-- Left aligned
+- 左对齐
 
 ![Desktop View](/assets/img/sample/mockup.png){: width="350" .normal}
 
 <br>
 
-- Float to left
+- 左浮动
 
   ![Desktop View](/assets/img/sample/mockup.png){: width="240" .left}
-  "A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space."
+  "这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。"
 
 <br>
 
-- Float to right
+- 右浮动
 
   ![Desktop View](/assets/img/sample/mockup.png){: width="240" .right}
-  "A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space. A repetitive and meaningless text is used to fill the space."
+  "这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。"
 
 <br>
 
@@ -130,29 +130,29 @@ _400px image width_
   cherry :active, c, after b a, 1d
 ```
 
-## Inline code
+## 行内代码
 
-This is an example of `Inline Code`.
+这是 `行内代码` 的示例。
 
-## Mathematics
+## 数学公式
 
-The mathematics powered by [**MathJax**](https://www.mathjax.org/):
+数学公式由 [**MathJax**](https://www.mathjax.org/) 提供支持：
 
 $$ \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6} $$
 
-When \\(a \ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are
+当 \\(a \ne 0\\) 时，方程 \\(ax^2 + bx + c = 0\\) 有两个解：
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
-## Code Snippet
+## 代码片段
 
-### Common
+### 通用
 
 ```
 This is a common code snippet, without syntax highlight and line number.
 ```
 
-### Specific Languages
+### 指定语言
 
 #### Console
 
@@ -236,6 +236,6 @@ private void writeObject(java.io.ObjectOutputStream s)
 }
 ```
 
-## Reverse Footnote
+## 反向脚注
 
-[^footnote]: The footnote source.
+[^footnote]: 脚注来源。

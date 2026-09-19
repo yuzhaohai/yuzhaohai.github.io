@@ -1,87 +1,87 @@
 ---
-title: Getting Started
-author: Cotes Chung
+title: 快速开始
+author: 于兆海
 date: 2019-08-09 20:55:00 +0800
-categories: [Blogging, Tutorial]
-tags: [getting started]
+categories: [博客, 教程]
+tags: [入门]
 pin: true
 ---
 
 
-## Installation
+## 安装
 
-[Fork **Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork) on GitHub, rename the repository to `USERNAME.github.io` (where `USERNAME` is your GitHub username), and then open terminal and clone the fork to local by:
+在 GitHub 上 [**Fork Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork)，将仓库重命名为 `USERNAME.github.io`（其中 `USERNAME` 是你的 GitHub 用户名），然后在终端中克隆该分支到本地：
 
 ```terminal
 $ git clone https://github.com/USERNAME/USERNAME.github.io.git -b master --single-branch
 ```
 
-### Setting up the local envrionment
+### 搭建本地环境
 
-If you would like to run or build the project on your local machine, please follow the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems`, `Jekyll` and `Bundler`. 
+如果你想在本地机器上运行或构建项目，请参考 [Jekyll 文档](https://jekyllrb.com/docs/installation/) 完成 `Ruby`、`RubyGems`、`Jekyll` 和 `Bundler` 的安装。
 
-Before running or building for the first time, please complete the installation of the Jekyll plugins. Go to the root directory of project and run:
+在首次运行或构建之前，请先安装 Jekyll 插件。进入项目根目录并运行：
 
 ```terminal
 $ bundle install
 ```
 
-`bundle` will automatically install all the dependencies specified by `Gemfile`.
+`bundle` 会自动安装 `Gemfile` 中指定的所有依赖。
 
-### Setting up Docker environment (optional)
+### 使用 Docker 环境（可选）
 
-If you're a loyal fan of [**Docker**](https://www.docker.com/) or just too lazy to install the packages mentioned in [_Setting up the local envrionment_](#setting-up-the-local-envrionment), please make sure you have **Docker Engine** installed and running, and then get Docker image `jekyll/jekyll` from Docker Hub by the following command:
+如果你是 [**Docker**](https://www.docker.com/) 的忠实爱好者，或者只是懒得安装上面提到的软件包，请确保 **Docker Engine** 已安装并运行，然后通过以下命令从 Docker Hub 获取 `jekyll/jekyll` 镜像：
 
 ```console
 $ docker pull jekyll/jekyll
 ```
 
-## Usage
+## 使用方法
 
-### Initialization
+### 初始化
 
-Go to the root directory of the project and start initialization:
+进入项目根目录并开始初始化：
 
 ```console
 $ bash tools/init.sh
 ```
 
-> **Note**: If you not intend to deploy it on GitHub Pages, append parameter option `--no-gh` at the end of the above command.
+> **注意**：如果你不打算部署到 GitHub Pages，请在以上命令末尾添加参数选项 `--no-gh`。
 
-What it does is:
+它所做的事情如下：
 
-1. Remove some files or directories from your repository:
+1. 从你的仓库中删除一些文件或目录：
 
     - `.travis.yml`
-    - files under `_posts`
-    - folder `docs`
+    - `_posts` 下的文件
+    - `docs` 文件夹
 
-2. If you use the `--no-gh` option, the directory `.github` will be deleted. Otherwise, setup the GitHub Action workflow by removing extension `.hook` of `.github/workflows/pages-deploy.yml.hook`, and then remove the other files and directories in folder `.github`. 
+2. 如果你使用了 `--no-gh` 选项，`.github` 目录将被删除。否则，将通过移除 `.github/workflows/pages-deploy.yml.hook` 的扩展名 `.hook` 来设置 GitHub Action 工作流，然后删除 `.github` 文件夹中的其他文件和目录。
 
-3. Automatically create a commit to save the changes.
+3. 自动创建一次提交以保存更改。
 
-### Configuration
+### 配置
 
-Generally, go to `_config.yml` and configure the variables as needed. Some of them are typical options:
+通常，进入 `_config.yml` 并按需配置其中的变量。其中一些典型选项如下：
 
 - `url`
 - `avatar`
 - `timezone`
 - `theme_mode`
 
-### Run Locally
+### 本地运行
 
-You may want to preview the site contents before publishing, so just run it by:
+你可能希望在发布前预览站点内容，只需运行：
 
 ```terminal
 $ bundle exec jekyll s
 ```
 
-Then open a browser and visit to <http://localhost:4000>.
+然后在浏览器中访问 <http://localhost:4000>。
 
-### Run on Docker
+### 使用 Docker 运行
 
-Run the site on Docker with the following command:
+使用以下命令在 Docker 上运行站点：
 
 ```terminal
 $ docker run --rm -it \
@@ -91,34 +91,34 @@ $ docker run --rm -it \
 ```
 
 
-### Deployment
+### 部署
 
-Before the deployment begins, checkout the file `_config.yml` and make sure the `url` is configured correctly. Furthermore, if you prefer the [_project site_](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) and don't use a custom domain, or you want to visit your website with a base url on a web server other than **GitHub Pages**, remember to change the `baseurl` to your project name that starting with a slash. For example, `/project`.
+部署开始前，请检查 `_config.yml` 文件，确保 `url` 配置正确。此外，如果你更喜欢 [_项目站点_](https://help.github.com/en/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites) 且不使用自定义域名，或者你希望在其他不是 **GitHub Pages** 的 Web 服务器上通过 baseurl 访问你的网站，请记得将 `baseurl` 改为以斜杠开头的项目名称，例如 `/project`。
 
-Assuming you have already gone through the [initialization](#initialization), you can now choose ONE of the following methods to deploy your website.
+假设你已经完成了[初始化](#初始化)，现在可以选择以下任一方法来部署你的网站。
 
-#### Deploy on GitHub Pages
+#### 部署到 GitHub Pages
 
-For security reasons, GitHub Pages build runs on `safe` mode, which restricts us from using plugins to generate additional page files. Therefore, we can use **GitHub Actions** to build the site, store the built site files on a new branch, and use that branch as the source of the Pages service.
+出于安全原因，GitHub Pages 构建运行在 `safe` 模式下，这限制了使用插件生成额外页面文件。因此，我们可以使用 **GitHub Actions** 构建站点，将构建好的站点文件存储在新分支上，并使用该分支作为 Pages 服务的来源。
 
-1. Push any commit to `origin/master` to trigger the GitHub Actions workflow. Once the build is complete and successful, a new remote branch named `gh-pages` will appear to store the built site files.
+1. 推送任意提交到 `origin/master` 以触发 GitHub Actions 工作流。一旦构建完成并成功，会出现一个名为 `gh-pages` 的新远程分支，用于存储构建好的站点文件。
 
-2. Browse to your repo's landing page on GitHub and select the branch `gh-pages` as the [publishing source](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) throught _Settings_ → _Options_ → _GitHub Pages_:
+2. 浏览到仓库主页，在 _Settings_ → _Options_ → _GitHub Pages_ 中选择 `gh-pages` 分支作为[发布来源](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)：
     ![gh-pages-sources](/assets/img/sample/gh-pages-sources.png){: width="650" class="normal"}
 
-3. Visit your website at the address indicated by GitHub.
+3. 访问 GitHub 指示的网站地址。
 
-#### Deploy on Other Platforms
+#### 部署到其他平台
 
-On platforms other than GitHub, we cannot enjoy the convenience of **GitHub Actions**. Therefore, we should build the site locally (or on some other 3rd-party CI platform) and then put the site files on the server.
+在除 GitHub 之外的平台上，我们无法享受 **GitHub Actions** 的便利。因此，我们应该在本地（或其他第三方 CI 平台）构建站点，然后将站点文件放到服务器上。
 
-Go to the root of the source project, build your site by:
+进入源项目根目录，通过以下命令构建站点：
 
 ```console
 $ JEKYLL_ENV=production bundle exec jekyll b
 ```
 
-Or, build the site with Docker by:
+或者使用 Docker 构建：
 
 ```terminal
 $ docker run -it --rm \
@@ -128,4 +128,4 @@ $ docker run -it --rm \
     jekyll build
 ```
 
-Unless you specified the output path, the generated site files will be placed in folder `_site` of the project's root directory. Now you should upload those files to your web server.
+除非你指定了输出路径，否则生成的站点文件将放在项目根目录的 `_site` 文件夹中。现在你应该将这些文件上传到你的 Web 服务器。
