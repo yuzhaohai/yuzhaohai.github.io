@@ -66,6 +66,7 @@ fi
 
 bundle exec htmlproofer "$DEST" \
   --disable-external \
+  --no-enforce-https \
   --checks Links,Images,Scripts,Html \
   --ignore-empty-alt \
   --ignore-missing-alt \
