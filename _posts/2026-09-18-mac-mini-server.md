@@ -3,7 +3,7 @@ title: M2丐中丐版Mac mini，搭建一台真正属于自己的服务器
 author: 于兆海
 date: 2026-09-18 11:33:00 +0800
 categories: [博客, 教程]
-tags: [Mac, Mac mini, 服务器, Docker]
+tags: [mac, mac-mini, 服务器, docker]
 ---
 
 # M2丐中丐版Mac mini，搭建一台真正属于自己的服务器
@@ -404,7 +404,7 @@ sudo -i
 
 ***alist_list.txt***
 在/xiaoya目录下`vi alist_list.txt`编辑套娃多个Alist资源库
- [alist_list.txt](alist_list.txt) 
+alist_list.txt
 
 ***alishare_list.txt***
 在/xiaoya目录下`vi alishare_list.txt`挂载别人分享的网盘
