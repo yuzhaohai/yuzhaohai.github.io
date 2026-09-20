@@ -4,8 +4,6 @@ author: 于兆海
 date: 2026-09-18 11:33:00 +0800
 categories: [博客, 教程]
 tags: [Mac, Mac mini, 服务器, Docker]
-math: true
-mermaid: true
 ---
 
 # M2丐中丐版Mac mini，搭建一台真正属于自己的服务器
