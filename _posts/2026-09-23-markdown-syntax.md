@@ -3,7 +3,7 @@ title: Markdown 语法
 author: 于兆海
 date: 2026-09-23 09:50:00 +0800
 categories: [博客, 教程]
-tags: [Markdown]
+tags: [markdown]
 ---
 
 ### 段落
