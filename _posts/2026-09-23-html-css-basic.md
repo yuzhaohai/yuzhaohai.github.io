@@ -9,7 +9,6 @@ tags: [html,css]
 <meta name="referrer" content="never" />
 <meta name="keywords" content="入门级基础知识" />
 <meta name="description" content="入门级基础知识" />
-<link rel="stylesheet" href="../css/base.css">
 
 ### HTML 超文本标记语言（Hyper Text Markup Language）
 

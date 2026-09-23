@@ -88,7 +88,7 @@ tags: [Markdown]
 [link text](url)
 ```
 
-[link text](url)
+[link text](https://example.com)
 
 [yangh9.github.io](/)
 
