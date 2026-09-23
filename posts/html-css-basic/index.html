@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="theme" content="于兆海的个人博客 v2.7.0"><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="HTML + CSS 入门" /><meta name="author" content="于兆海" /><meta property="og:locale" content="en_US" /><meta name="description" content="于兆海的个人博客，记录技术学习笔记与生活随想。" /><meta name="twitter:description" property="og:description" content="于兆海的个人博客，记录技术学习笔记与生活随想。" /><link rel="canonical" href="https://yuzhaohai.github.io/posts/html-css-basic/" /><meta property="og:url" content="https://yuzhaohai.github.io/posts/html-css-basic/" /><meta property="og:site_name" content="于兆海的个人博客" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2026-09-23T10:10:00+08:00" /><meta property="article:modified_time" content="2026-09-23T10:18:33+08:00" /><meta name="twitter:card" content="summary" /><meta name="twitter:title" content="HTML + CSS 入门" /><meta name="twitter:site" content="@twitter_username" /><meta name="twitter:creator" content="@于兆海" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"于兆海"},"dateModified":"2026-09-23T10:18:33+08:00","datePublished":"2026-09-23T10:10:00+08:00","description":"于兆海的个人博客，记录技术学习笔记与生活随想。","headline":"HTML + CSS 入门","mainEntityOfPage":{"@type":"WebPage","@id":"https://yuzhaohai.github.io/posts/html-css-basic/"},"url":"https://yuzhaohai.github.io/posts/html-css-basic/"}</script><title>HTML + CSS 入门 | 于兆海的个人博客</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="preload" href="/assets/css/post.css" as="style"><link rel="stylesheet" href="/assets/css/post.css"><link rel="preload" as="style" href="/assets/css/lib/bootstrap-toc.min.css"><link rel="stylesheet" href="/assets/css/lib/bootstrap-toc.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="/assets/js/post.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id="></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); }); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column"><div id="nav-wrapper"><div id="profile-wrapper" class="d-flex flex-column"><div id="avatar" class="d-flex justify-content-center"> <a href="/" alt="avatar"> <img src="/assets/img/sample/avatar.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="profile-text mt-3"><div class="site-title"> <a href="/">于兆海</a></div><div class="site-subtitle font-italic">命运长河里挣扎的一条小鱼</div></div></div><ul class="nav flex-column"><li class="nav-item d-flex justify-content-center "> <a href="/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>首页</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/categories/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>分类</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/tags/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>标签</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/archives/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>归档</span> </a><li class="nav-item d-flex justify-content-center "> <a href="/tabs/about/" class="nav-link d-flex justify-content-center align-items-center w-100"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>关于</span> </a></ul></div><div class="sidebar-bottom d-flex flex-wrap justify-content-around mt-4"> <span id="mode-toggle-wrapper"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span> <span class="icon-border"></span> <a href="https://github.com/yuzhaohai" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['yuzhaohai','126.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> 文章 </a> </span> <span>HTML + CSS 入门</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> 文章</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="搜索..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >取消</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>HTML + CSS 入门</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="2026年9月23日 10:10" > 9月23日 <i class="unloaded">2026-09-23T10:10:00+08:00</i> </span> 发布于 <span class="author"> 于兆海 </span></div><div> <span> 更新于 <span class="timeago lastmod" data-toggle="tooltip" data-placement="bottom" title="2026年9月23日 10:18" > 9月23日 <i class="unloaded">2026-09-23T10:18:33+08:00</i> </span> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="2214 words">12 分钟</span></div></div><div class="post-content"><meta name="referrer" content="never" /><meta name="keywords" content="入门级基础知识" /><meta name="description" content="入门级基础知识" /><h3 id="html-超文本标记语言hyper-text-markup-language">HTML 超文本标记语言（Hyper Text Markup Language）</h3><h4 id="开头">开头</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="cp">&lt;!doctype html&gt;</span> 声明文档类型为HTML网页
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span> 根标记 声明文档语言类型
+<span class="nt">&lt;head&gt;</span> 定义页面头部信息
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span> 定义页面的编码格式为UTF-8
+<span class="nt">&lt;title&gt;&lt;/title&gt;</span> 定义页面标题信息
+<span class="nt">&lt;body&gt;</span> 定义页面的主体内容
+    <span class="nt">&lt;&gt;</span> 括起来的称为标记（标签、元素）
+    语法：<span class="nt">&lt;标记内容&gt;&lt;/标记内容&gt;</span>
+    分类：
+        封闭类型标记（双标记）
+            如：<span class="nt">&lt;标记内容&gt;&lt;/标记内容&gt;</span>
+            ** 注意：又开始就必须有结束 **
+        非封闭类型标记（单标记）
+            如：<span class="nt">&lt;标记内容&gt;</span>
+<span class="c">&lt;!-- 注释；横杠中的内容不显示，必须写在四个横线中间 --&gt;</span>
+标记内 <span class="nt">&lt;标记名</span> <span class="na">属性=</span><span class="s">"值"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body</span> <span class="na">bgcolor=</span><span class="s">"pink"</span><span class="nt">&gt;</span> 页面主体背景色为粉色
+</pre></table></code></div></div><h4 id="特殊字符">特殊字符</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="ni">&amp;nbsp;</span> 空格
+<span class="ni">&amp;lt;</span> 左尖括号 <span class="nt">&lt;</span>
+<span class="err">&amp;</span><span class="na">gt</span><span class="err">;</span> <span class="na">右尖括号</span> <span class="nt">&gt;</span>
+<span class="ni">&amp;copy;</span> 版权标志 ©
+<span class="ni">&amp;yen;</span> 人民币 ￥
+</pre></table></code></div></div><h4 id="文本标记">文本标记</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">&lt;b&gt;&lt;/b&gt;</span> <span class="nt">&lt;strong&gt;&lt;/strong&gt;</span> 加粗
+<span class="nt">&lt;i&gt;&lt;/i&gt;</span> <span class="nt">&lt;em&gt;&lt;/em&gt;</span> 斜体
+<span class="nt">&lt;u&gt;&lt;/u&gt;</span> <span class="nt">&lt;ins&gt;&lt;/ins&gt;</span> 下划线
+<span class="nt">&lt;s&gt;&lt;/s&gt;</span> <span class="nt">&lt;del&gt;&lt;/del&gt;</span> 删除线
+<span class="nt">&lt;sup&gt;&lt;/sup&gt;</span> 上标
+<span class="nt">&lt;sub&gt;&lt;/sub&gt;</span> 下标
+<span class="nt">&lt;p&gt;&lt;/p&gt;</span> 段落
+    特点：上下垂直空白
+</pre></table></code></div></div><h4 id="标题标记">标题标记</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;&lt;/h6&gt;</span>
+特点：上下垂直空白，加粗，改变文字大小，只有h1~h6六种，数越大字越小
+</pre></table></code></div></div><h4 id="换行">换行</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nt">&lt;br/&gt;</span>
+</pre></table></code></div></div><h4 id="换行-1">换行</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">&lt;hr/&gt;</span>
+属性：
+    size：尺寸，宽度
+    width：宽度
+    align：水平宽度（位置）
+        值：left（靠左）、right（靠右）、center（居中）
+    color：颜色
+</pre></table></code></div></div><h4 id="行分区">行分区</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+作用：包裹文字，并且可以自定义样式。
+</pre></table></code></div></div><h4 id="块分区">块分区</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+作用：布局
+</pre></table></code></div></div><h4 id="欲格式化">欲格式化</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="nt">&lt;pre&gt;&lt;/pre&gt;</span>
+特点：保留原文档中的格式（回车，空格）
+</pre></table></code></div></div><h4 id="url俗称路径">URL（俗称：路径）</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>相对路径（相对于文档所在的位置处开始查找资源文件的路径，主要依托于位置关系的查找）
+    同目录：直接引用
+    子目录：先进入
+    父目录：先退出
+/   进入
+./  当前目录（可省略）
+../ 退出
+</pre></table></code></div></div><h4 id="图像">图像</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>图像格式：.jpg、.png、.git……
+语法：<span class="nt">&lt;img&gt;</span>
+属性：
+    src：图像所在的路径
+    width：宽度
+    height：高度
+    title：标题（鼠标移入时显示的文字）
+</pre></table></code></div></div><h4 id="超链接">超链接</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>语法：<span class="nt">&lt;a&gt;&lt;/a&gt;</span>
+属性：
+    href（链接路径）：为空则a标签不生效，为#则是空链接（返回顶层）
+    target（打开新页面的方式，默认在当前页面打开）：_blank（新的标签页打开）、_self（自身页面中打开）
+    name：锚的名称
+    title：标题（鼠标移入时显示的文字）
+锚点：负责在页面中做一个记号，允许用户通过超链接随时跳转到这个记号上来
+    使用方式：
+        定义锚点（在页面中做记号）：a标签内的name属性
+        链接到锚点：a标签内的href属性（#name值）
+        其他页面锚点跳转：a标签内的href属性（其他页面的路径#name值）
+</pre></table></code></div></div><h4 id="表格">表格</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre><td class="rouge-code"><pre>表格：按照一定的格式将数据显示出来
+单元格：按照从左到右、从上到下的方式进行排列
+<span class="c">&lt;!--  --&gt;</span>
+表格的使用：
+    创建表格：<span class="nt">&lt;table&gt;&lt;/table&gt;</span>
+    创建表格（行）：<span class="nt">&lt;tr&gt;&lt;/tr&gt;</span>
+    创建表格（列）：<span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+    所有的数据内容都必须在<span class="nt">&lt;td&gt;&lt;/td&gt;</span>中，
+<span class="c">&lt;!--  --&gt;</span>
+table的属性：
+    width（宽度）：默认以px为单位，可设置其他单位
+    height（高度）：默认以px为单位，可设置其他单位
+    align（位置）：left（靠左）、right（靠右）、center（居中）
+    border（边框）：数值（没有单位），取值为0时没有边框
+    cellpadding（内边距）：td内容与td之间的距离
+    cellspacing（外边距）：td与td之间的距离
+    bgcolor（背景颜色）
+tr的属性：
+    align（设置一行数据的水平对齐方式）：left（靠左）、right（靠右）、center（居中）
+    valign（设置一行数据的垂直对齐方式）：top（上对齐）、middle（居中对齐）、bottom（下对齐）
+    bgcolor（背景颜色）
+td的属性：
+    width（宽度，设置好宽度后，每行该列的宽度都与设置的值相等）
+    height（高度，设置好高度后，每行所有列的高度都与设置的值相等）
+    align（设置一格数据的水平对齐方式）：left（靠左）、right（靠右）、center（居中）
+    valign（设置一格数据的垂直对齐方式）：top（上对齐）、middle（居中对齐）、bottom（下对齐）
+    colspan（跨列）：数值（一个单元格占用几个格的宽度）
+    rowspan（跨行）：数值（一个单元格占用几个格的高度）
+行、列标题：<span class="nt">&lt;th&gt;&lt;/th&gt;</span>（使用方式与td相同）
+表格的复杂应用：
+    表头：<span class="nt">&lt;thead&gt;&lt;/thead&gt;</span>
+    表主体：<span class="nt">&lt;tbody&gt;&lt;/tbody&gt;</span>
+    表尾：<span class="nt">&lt;tfoot&gt;&lt;/tfoot&gt;</span>
+</pre></table></code></div></div><h4 id="列表">列表</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>分类：有序列表、无序列表
+语法：
+    有序列表（有序的列表）：<span class="nt">&lt;ol&gt;&lt;/ol&gt;</span>
+    无序列表（无序的列表）：<span class="nt">&lt;ul&gt;&lt;/ul&gt;</span>
+    列表项（列表的单项）：<span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+ul属性：
+    type（无序列表的类型）：disc（实心圆，默认）、circle（空心圆）、square（实心方块）、none（不显示标识）
+ul属性：
+    type（有序列表的类型）：1（数字，默认）、a（小写英文字符）、A（大写英文字符）、i（小写罗马字符）、I（大写罗马字符）
+    start（起始编码）：从哪个字符开始
+</pre></table></code></div></div><h4 id="表单">表单</h4><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>表单作用：用于显示、收集、提交用户的新机到服务器
+表单的组成：表单元素，表单的控制元素
+语法：<span class="nt">&lt;form&gt;&lt;/form&gt;</span>
+特点：看不见、摸不着
+作用：负责将表单元素和表单控件的数据集中进行提交；如果表单控件元素不在表单中，那么数据将无法提交
+属性：
+    id：定义页面表单在页面中的唯一标识
+    name：定义表单的名称
+    method：设置表单数据的提交方式
+        get：（默认值）以明文的方式进行提交数据，数据会显示在地址栏中
+        post：以密文的方式进行数据提交，数据不会显示在地址栏中
+</pre></table></code></div></div><h5 id="表单控件">表单控件</h5><div class="language-html highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+</pre><td class="rouge-code"><pre>表单控件作用：提供一组允许用户操作的控件，从而接收用户输入的数据
+表单控件元素：
+语法：<span class="nt">&lt;input&gt;</span>
+类型：文本框、密码框、提交按钮、重置按钮、普通按钮、单选按钮、复选按钮、文件选择框、隐藏域……
+共有属性：
+    type：根据不同的type取值，创建不同的input控件
+        取值：text（默认）、password、button、submit、reset、file、hidden……
+        注：type的取值，默认或者写错的时候，都是一个文本框
+    value：控件的值，提交给服务器时使用
+    name：控件名称，提交给服务器时使用
+
+    文本框类：type为text、password
+        value：用户输入的数据
+        maxlength：限制输入的字符数
+        readonly：只读（只能看不能改）
+
+    按钮类：type为button、submit、reset
+        value：设置按钮上的文字
+
+    单选复选：type为radio、checkbox
+        name：除了表示名称之外，还表示分组信息，一组单选按钮和复选按钮，名称必须相同
+        value：必须设置
+        checked：设置预选中（无需设值）
+
+选项框：
+    类型：下拉选项框、滚动列表
+    语法：
+        选项框：<span class="nt">&lt;select&gt;&lt;/select&gt;</span>
+            属性：name、size（取值大于1时，为滚动列表）
+        选项框中的选项：<span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+            属性：value、selected（预选中）
+
+特殊表单类：
+隐藏详情：
+<span class="nt">&lt;details&gt;</span>
+    <span class="nt">&lt;summary&gt;</span>显示的标题<span class="nt">&lt;/summary&gt;</span>
+    隐藏的内容，点击显示
+<span class="nt">&lt;/details&gt;</span>
+
+电池进度条：
+<span class="nt">&lt;meter</span> <span class="na">min=</span><span class="s">"0"</span> <span class="na">max=</span><span class="s">"100"</span> <span class="na">value=</span><span class="s">"90"</span><span class="nt">&gt;&lt;/meter&gt;</span>
+
+按钮：
+<span class="nt">&lt;button&gt;</span>按钮<span class="nt">&lt;/button&gt;</span>
+</pre></table></code></div></div><h3 id="css-层叠样式表cascading-style-sheets">CSS 层叠样式表（Cascading Style Sheets）</h3><blockquote><p>别称：样式表、层叠样式表、级联样式表</p></blockquote><h4 id="css的作用">css的作用</h4><blockquote><p>控制页面上的元素样式</p></blockquote><h4 id="使用css">使用CSS</h4><div class="language-css highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="err">1、</span><span class="nt">内联样式</span><span class="err">：（</span><span class="nt">也称为行内样式</span><span class="err">）</span>
+<span class="nt">将样式定义在html的元素中</span>
+<span class="nt">语法</span><span class="err">：</span>
+    <span class="nt">样式定义在元素的style属性中</span><span class="err">，</span><span class="o">&lt;</span><span class="nt">div</span> <span class="nt">style</span><span class="o">=</span><span class="s1">""</span><span class="o">&gt;&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+    <span class="nt">style中允许出现多个样式声明</span>
+<span class="nt">样式声明</span><span class="err">：</span><span class="nt">属性名称</span><span class="o">:</span> <span class="nt">值</span> <span class="nt">值</span><span class="o">;</span>
+<span class="err">2、</span>  <span class="err">19</span>
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/%E5%8D%9A%E5%AE%A2/'>博客</a>, <a href='/categories/%E6%95%99%E7%A8%8B/'>教程</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/html/" class="post-tag no-text-decoration" >html</a> <a href="/tags/css/" class="post-tag no-text-decoration" >css</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 本文采用 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 许可协议。</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">分享</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=HTML + CSS 入门 - 于兆海的个人博客&url=https://yuzhaohai.github.io/posts/html-css-basic/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=HTML + CSS 入门 - 于兆海的个人博客&u=https://yuzhaohai.github.io/posts/html-css-basic/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=HTML + CSS 入门 - 于兆海的个人博客&url=https://yuzhaohai.github.io/posts/html-css-basic/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="复制链接"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>最近更新</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/markdown-syntax/">Markdown 语法</a><li><a href="/posts/commands/">常用命令汇总</a><li><a href="/posts/html-css-basic/">HTML + CSS 入门</a><li><a href="/posts/mac-mini-server/">M2丐中丐版Mac mini，搭建一台真正属于自己的服务器</a><li><a href="/posts/getting-started/">快速开始</a></ul></div><div id="access-tags"> <span>热门标签</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/css/">css</a> <a class="post-tag" href="/tags/docker/">docker</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/html/">html</a> <a class="post-tag" href="/tags/mac-mini/">mac-mini</a> <a class="post-tag" href="/tags/mac/">mac</a> <a class="post-tag" href="/tags/markdown/">markdown</a> <a class="post-tag" href="/tags/%E5%85%A5%E9%97%A8/">入门</a> <a class="post-tag" href="/tags/%E5%86%99%E4%BD%9C/">写作</a> <a class="post-tag" href="/tags/%E5%91%BD%E4%BB%A4/">命令</a></div></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">目录</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>相关文章</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/write-a-new-post/"><div class="card-body"> <span class="timeago small" > 2019年8月8日 <i class="unloaded">2019-08-08T14:10:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>如何撰写新文章</h3><div class="text-muted small"><p> 命名与路径 创建一个名为 YYYY-MM-DD-标题.扩展名 的新文件，并将其放在根目录的 _posts/ 中。请注意，扩展名 必须是 md 和 markdown 之一。 Front Matter（文章信息） 通常，你需要在文章顶部填写如下 Front Matter： --- title: 标题 date: YYYY-MM-DD HH:MM:SS +/-TTTT categories...</p></div></div></a></div><div class="card"> <a href="/posts/getting-started/"><div class="card-body"> <span class="timeago small" > 2019年8月9日 <i class="unloaded">2019-08-09T20:55:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>快速开始</h3><div class="text-muted small"><p> 安装 在 GitHub 上 Fork Chirpy，将仓库重命名为 USERNAME.github.io（其中 USERNAME 是你的 GitHub 用户名），然后在终端中克隆该分支到本地： $ git clone https://github.com/USERNAME/USERNAME.github.io.git -b master --single-branch 搭建本地环境 ...</p></div></div></a></div><div class="card"> <a href="/posts/customize-the-favicon/"><div class="card-body"> <span class="timeago small" > 2019年8月11日 <i class="unloaded">2019-08-11T00:34:00+08:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>自定义站点图标</h3><div class="text-muted small"><p> 在 Chirpy 中，Favicons（站点图标）的图片文件位于 assets/img/favicons/ 目录。你可能需要用自己制作的图标替换它们。下面来看看如何自定义这些图标。 准备好一张方形图片（PNG、JPG 或 GIF），打开 Favicon &amp; App Icon Generator 网站并上传你的原始图片。 点击 Create Favicon 按钮，稍等片刻，网站...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/markdown-syntax/" class="btn btn-outline-primary"><p>Markdown 语法</p></a> <span class="btn btn-outline-primary disabled"><p>-</p></span></div></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('#post-wrapper img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2026 <a href="https://twitter.com/username">于兆海</a>.</p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-xl-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">热门标签</h4><a class="post-tag" href="/tags/css/">css</a> <a class="post-tag" href="/tags/docker/">docker</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/html/">html</a> <a class="post-tag" href="/tags/mac-mini/">mac mini</a> <a class="post-tag" href="/tags/mac/">mac</a> <a class="post-tag" href="/tags/markdown/">markdown</a> <a class="post-tag" href="/tags/%E5%85%A5%E9%97%A8/">入门</a> <a class="post-tag" href="/tags/%E5%86%99%E4%BD%9C/">写作</a> <a class="post-tag" href="/tags/%E5%91%BD%E4%BB%A4/">命令</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://yuzhaohai.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">抱歉，没有找到相关内容。</p>' }); </script>
