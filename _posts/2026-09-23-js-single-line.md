@@ -1,0 +1,336 @@
+---
+title: 一行 JS 能实现哪些功能
+author: 于兆海
+date: 2026-09-23 12:10:00 +0800
+categories: [博客, 教程]
+tags: [js]
+---
+
+<meta name="referrer" content="never" />
+<meta name="keywords" content="这些一行 JS 实现功能的代码，让你看起来像一个前端专家" />
+<meta name="description" content="这些一行 JS 实现功能的代码，让你看起来像一个前端专家" />
+<link rel="stylesheet" href="../css/base.css">
+
+> JavaScript 可以做很多神奇的事情！<br>
+> 从复杂的框架到处理 API，有太多的东西需要学习。<br>
+> 但是，它也能让你只用一行代码就能做一些了不起的事情。<br>
+> 看看这 13 句 JavaScript 单行代码，会让你看起来像个专家！<br>
+
+### 1、获取一个随机布尔值 (true/false)
+
+> 这个函数使用 `Math.random()` 方法返回一个布尔值（true 或 false）。`Math.random()` 将在 0 和 1 之间创建一个随机数，之后我们检查它是否高于或低于 0.5。这意味着得到真或假的几率是 50%/50%。
+
+```js
+const randomBoolean = () => Math.random() >= 0.5;
+console.log(randomBoolean());
+// Result: a 50/50 change on returning true of false
+```
+
+### 2、检查日期是否为工作日
+
+> 使用这个方法，你就可以检查函数参数是工作日还是周末。
+
+```js
+const isWeekday = (date) => date.getDay() % 6 !== 0;
+console.log(isWeekday(new Date(2021, 0, 11)));
+// Result: true (Monday)
+console.log(isWeekday(new Date(2021, 0, 10)));
+// Result: false (Sunday)
+```
+
+### 3、反转字符串
+
+> 有几种不同的方法来反转一个字符串。以下代码是最简单的方式之一。
+
+```js
+const reverse = str => str.split('').reverse().join('');
+reverse('hello world');     
+// Result: 'dlrow olleh'
+```
+### 4、检查当前 Tab 页是否在前台
+
+> 我们可以通过使用 `document.hidden` 属性来检查当前标签页是否在前台中。
+
+```js
+const isBrowserTabInView = () => document.hidden;
+isBrowserTabInView();
+// Result: returns true or false depending on if tab is in view / focus
+```
+
+### 5、检查数字是否为奇数
+
+> 最简单的方式是通过使用模数运算符（%）来解决。如果你对它不太熟悉，这里是 Stack Overflow 上的一个很好的图解。
+
+```js
+const isEven = num => num % 2 === 0;
+console.log(isEven(2));
+// Result: true
+console.log(isEven(3));
+// Result: false
+```
+### 6、从日期中获取时间
+
+> 通过使用 `toTimeString()` 方法，在正确的位置对字符串进行切片，我们可以从提供的日期中获取时间或者当前时间。
+
+```js
+const timeFromDate = date => date.toTimeString().slice(0, 8);
+console.log(timeFromDate(new Date(2021, 0, 10, 17, 30, 0))); 
+// Result: "17:30:00"
+console.log(timeFromDate(new Date()));
+// Result: will log the current time
+```
+### 7、保留小数点（非四舍五入）
+
+> 使用 `Math.pow()` 方法，我们可以将一个数字截断到某个小数点。
+
+```js
+const toFixed = (n, fixed) => ~~(Math.pow(10, fixed) * n) / Math.pow(10, fixed);
+// Examples
+toFixed(25.198726354, 1);       // 25.1
+toFixed(25.198726354, 2);       // 25.19
+toFixed(25.198726354, 3);       // 25.198
+toFixed(25.198726354, 4);       // 25.1987
+toFixed(25.198726354, 5);       // 25.19872
+toFixed(25.198726354, 6);       // 25.198726
+
+// 缩减写法
+// const toFixed = (n, fixed) => ~~(10 ** fixed * n) / 10 ** fixed;
+```
+
+### 8、检查元素当前是否为聚焦状态
+
+> 我们可以使用 `document.activeElement` 属性检查一个元素当前是否处于聚焦状态。
+
+```js
+const elementIsInFocus = (el) => (el === document.activeElement);
+elementIsInFocus(anyElement)
+// Result: will return true if in focus, false if not in focus
+```
+
+### 9、检查浏览器是否支持触摸事件
+
+```js
+const touchSupported = () => {
+  ('ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch);
+}
+console.log(touchSupported());
+// Result: will return true if touch events are supported, false if not
+```
+
+### 10、检查当前用户是否为苹果设备
+
+> 我们可以使用 `navigator.platform` 来检查当前用户是否为苹果设备。
+
+```js
+const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+console.log(isAppleDevice);
+// Result: will return true if user is on an Apple device
+```
+
+### 11、滚动到页面顶部
+
+> `window.scrollTo()` 方法会取一个 x 和 y 坐标来进行滚动。如果我们将这些坐标设置为零，就可以滚动到页面的顶部。
+注意：IE 不支持 `scrollTo()` 方法。
+```js
+const goToTop = () => window.scrollTo(0, 0);
+goToTop();
+// Result: will scroll the browser to the top of the page
+```
+
+### 12、获取所有参数平均值
+
+> 我们可以使用 `reduce` 方法来获得函数参数的平均值。
+
+```js
+const average = (...args) => args.reduce((a, b) => a + b) / args.length;
+average(1, 2, 3, 4);
+// Result: 2.5
+```
+
+### 13、转换华氏度/摄氏度。（这个应该很少在国内用到吧）
+
+> 处理温度有时会让人感到困惑。这两个功能将帮助你将华氏温度转换为摄氏温度，反之亦然。
+
+```js
+const celsiusToFahrenheit = (celsius) => celsius * 9/5 + 32;
+const fahrenheitToCelsius = (fahrenheit) => (fahrenheit - 32) * 5/9;
+// Examples
+celsiusToFahrenheit(15);    // 59
+celsiusToFahrenheit(0);     // 32
+celsiusToFahrenheit(-20);   // -4
+fahrenheitToCelsius(59);    // 15
+fahrenheitToCelsius(32);    // 0
+```
+
+### 14、获取浏览器Cookie的值
+
+> 通过 `document.cookie` 来查找 `cookie` 值
+
+```js
+const cookie = name => `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();
+```
+
+### 15、颜色RGB转十六进制
+
+```js
+const rgbToHex = (r, g, b) => "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+rgbToHex(0, 51, 255);
+// Result: #0033ff
+```
+
+### 16、复制到剪贴板
+
+> 借助 `navigator.clipboard.writeText` 可以很容易的讲文本复制到剪贴板
+
+> 规范要求在写入剪贴板之前使用 Permissions API 获取“剪贴板写入”权限。但是，不同浏览器的具体要求不同，因为这是一个新的API。有关详细信息，请查看compatibility table and Clipboard availability in Clipboard。
+
+```js
+const copyToClipboard = (text) => navigator.clipboard.writeText(text);
+
+copyToClipboard("Hello World");
+```
+
+### 17、检查日期是否合法
+
+> 使用以下代码段检查给定日期是否有效。
+
+```js
+const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
+
+isDateValid("December 17, 1995 03:24:00");
+// Result: true
+```
+
+### 18、查找日期位于一年中的第几天
+
+```js
+const dayOfYear = (date) =>
+  Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
+dayOfYear(new Date());
+// Result: 272
+```
+
+### 19、英文字符串首字母大写
+
+> Javascript没有内置的首字母大写函数，因此我们可以使用以下代码。
+
+```js
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
+
+capitalize("follow for more")
+// Result: Follow for more
+```
+
+### 20、计算两个日期之间相差多少天
+
+```js
+const dayDif = (date1, date2) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
+
+dayDif(new Date("2020-10-1"), new Date("2021-10-1"))
+// Result: 365
+```
+
+### 21、清除全部Cookie
+
+> 通过使用 `document.cookie` 访问 `cookie` 并将其清除，可以轻松清除网页中存储的所有 `cookie` 。
+
+```js
+const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.```js, `=;expires=${new Date(0).toUTCString()};path=/`));
+```
+
+### 22、生成随机十六进制颜色
+
+> 可以使用 `Math.random` 和 `padEnd` 属性生成随机的十六进制颜色。
+
+```js
+const randomHex = () => `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, "0")}`;
+
+console.log(randomHex());
+// Result: #92b008
+```
+
+### 23、数组去重
+
+> 可以使用 JavaScript 中的Set轻松删除重复项
+
+```js
+const removeDuplicates = (arr) => [...new Set(arr)];
+
+console.log(removeDuplicates([1, 2, 3, 3, 4, 4, 5, 5, 6]));
+// Result: [ 1, 2, 3, 4, 5, 6 ]
+```
+
+### 24、从 URL 获取查询参数
+
+> 可以通过传递 `window.location` 或原始 URL goole.com?search=easy&page=3 轻松地从 url 检索查询参数
+
+```js
+const getParameters = (URL) => {
+  URL = JSON.parse('{"' + decodeURI(URL.split("?")[1]).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+  return JSON.stringify(URL);
+};
+
+getParameters(window.location);
+// Result: { search : "easy", page : 3 }
+```
+
+> 或者更为简单的：
+
+```js
+Object.fromEntries(new URLSearchParams(window.location.search))
+// Result: { search : "easy", page : 3 }
+```
+
+### 25、校验数字是奇数还是偶数
+
+```js
+const isEven = num => num % 2 === 0;
+
+console.log(isEven(2));
+// Result: True
+```
+
+### 26、校验数组是否为空
+
+> 一行代码检查数组是否为空,将返回 `true` 或 `false`
+
+```js
+const isNotEmpty = arr => Array.isArray(arr) && arr.length > 0;
+
+isNotEmpty([1, 2, 3]);
+// Result: true
+```
+
+### 27、获取用户选择的文本
+
+> 使用内置的 `getSelection` 属性获取用户选择的文本。
+
+```js
+const getSelectedText = () => window.getSelection().toString();
+
+getSelectedText();
+```
+
+### 28、打乱数组
+
+> 可以使用 `sort` 和 `random` 方法打乱数组
+
+```js
+const shuffleArray = (arr) => arr.sort(() => 0.5 - Math.random());
+
+console.log(shuffleArray([1, 2, 3, 4]));
+// Result: [ 1, 4, 3, 2 ]
+```
+
+### 29、检查用户的设备是否处于暗模式
+
+> 使用以下代码检查用户的设备是否处于暗模式。
+
+```js
+const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+console.log(isDarkMode)
+// Result: True or False
+```
