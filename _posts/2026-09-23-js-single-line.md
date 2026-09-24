@@ -6,10 +6,6 @@ categories: [博客, 教程]
 tags: [js]
 ---
 
-<meta name="referrer" content="never" />
-<meta name="keywords" content="这些一行 JS 实现功能的代码，让你看起来像一个前端专家" />
-<meta name="description" content="这些一行 JS 实现功能的代码，让你看起来像一个前端专家" />
-
 > JavaScript 可以做很多神奇的事情！<br>
 > 从复杂的框架到处理 API，有太多的东西需要学习。<br>
 > 但是，它也能让你只用一行代码就能做一些了不起的事情。<br>
