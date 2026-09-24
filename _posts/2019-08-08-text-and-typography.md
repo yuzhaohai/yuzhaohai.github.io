@@ -1,124 +1,157 @@
 ---
-title: 文本与排版
-author: 于兆海
+title: Text and Typography
+description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
+author: cotes
 date: 2019-08-08 11:33:00 +0800
-categories: [博客, 演示]
-tags: [排版]
+categories: [Blogging, Demo]
+tags: [typography]
+pin: true
 math: true
 mermaid: true
-image: /assets/img/sample/devices-mockup.png
+image:
+  path: /commons/devices-mockup.png
+  lqip: data:image/webp;base64,UklGRpoAAABXRUJQVlA4WAoAAAAQAAAADwAABwAAQUxQSDIAAAARL0AmbZurmr57yyIiqE8oiG0bejIYEQTgqiDA9vqnsUSI6H+oAERp2HZ65qP/VIAWAFZQOCBCAAAA8AEAnQEqEAAIAAVAfCWkAALp8sF8rgRgAP7o9FDvMCkMde9PK7euH5M1m6VWoDXf2FkP3BqV0ZYbO6NA/VFIAAAA
+  alt: Responsive rendering of Chirpy theme on multiple devices.
 ---
 
-这篇文章用于展示 [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork) 上的 Markdown 语法渲染效果，你也可以将其作为写作示例。现在，让我们开始看看文本与排版。
+## Headings
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+# H1 — heading
+{: .mt-4 .mb-0 }
 
-## 标题
----
-# H1 - 一级标题
+## H2 — heading
+{: data-toc-skip='' .mt-4 .mb-0 }
 
-<h2 data-toc-skip>H2 - 二级标题</h2>
+### H3 — heading
+{: data-toc-skip='' .mt-4 .mb-0 }
 
-<h3 data-toc-skip>H3 - 三级标题</h3>
+#### H4 — heading
+{: data-toc-skip='' .mt-4 }
+<!-- markdownlint-restore -->
 
-<h4>H4 - 四级标题</h4>
----
-<br>
+## Paragraph
 
-## 段落
+Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas interdum malesuada egestas. Duis consectetur porta risus, sit amet vulputate urna facilisis ac. Phasellus semper dui non purus ultrices sodales. Aliquam ante lorem, ornare a feugiat ac, finibus nec mauris. Vivamus ut tristique nisi. Sed vel leo vulputate, efficitur risus non, posuere mi. Nullam tincidunt bibendum rutrum. Proin commodo ornare sapien. Vivamus interdum diam sed sapien blandit, sit amet aliquam risus mattis. Nullam arcu turpis, mollis quis laoreet at, placerat id nibh. Suspendisse venenatis eros eros.
 
-我孤独地漫游，像一朵云
+## Lists
 
-在幽谷与山巅之间飘荡，
+### Ordered list
 
-忽然间我看见一群，
+1. Firstly
+2. Secondly
+3. Thirdly
 
-一片金色的水仙花；
+### Unordered list
 
-在湖畔，在树下，
+- Chapter
+  - Section
+    - Paragraph
 
-迎着微风起舞翩翩。
+### ToDo list
 
-## 列表
+- [ ] Job
+  - [x] Step 1
+  - [x] Step 2
+  - [ ] Step 3
 
-### 有序列表
+### Description list
 
-1. 第一项
-2. 第二项
-3. 第三项
+Sun
+: the star around which the earth orbits
 
-### 无序列表
+Moon
+: the natural satellite of the earth, visible by reflected light from the sun
 
-- 章
-	- 节
-      - 段
+## Block Quote
 
-### 复选框列表
+> This line shows the _block quote_.
 
-- [ ] 待办事项
-- [x] 已完成
-- 稍等
-- [ ] 战胜 COVID-19
-  - [x] 疫苗生产
-  - [ ] 经济复苏
-  - [ ] 人们再次微笑
+## Prompts
 
-## 引用
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> An example showing the `tip` type prompt.
+{: .prompt-tip }
 
-> 此行用于展示引用效果。
+> An example showing the `info` type prompt.
+{: .prompt-info }
 
-## 表格
+> An example showing the `warning` type prompt.
+{: .prompt-warning }
 
-| 公司                         | 联系人           | 国家 |
-|:-----------------------------|:-----------------|-----:|
-| Alfreds Futterkiste          | Maria Anders     | 德国 |
-| Island Trading               | Helen Bennett    | 英国 |
-| Magazzini Alimentari Riuniti | Giovanni Rovelli | 意大利 |
+> An example showing the `danger` type prompt.
+{: .prompt-danger }
+<!-- markdownlint-restore -->
 
-## 链接
+## Tables
 
-`http://127.0.0.1:4000`
+| Company                      | Contact          | Country |
+| :--------------------------- | :--------------- | ------: |
+| Alfreds Futterkiste          | Maria Anders     | Germany |
+| Island Trading               | Helen Bennett    |      UK |
+| Magazzini Alimentari Riuniti | Giovanni Rovelli |   Italy |
 
+## Links
 
-## 脚注
+<http://127.0.0.1:4000>
 
-点击该钩子可以定位到脚注[^footnote]。
+## Footnote
 
+Clicking the hook will locate the footnote[^footnote], and here is another footnote[^fn-nth-2].
 
-## 图片
+## Inline code
 
-- 默认（带说明文字）
+This is an example of `Inline Code`.
 
-![Desktop View](/assets/img/sample/mockup.png)
-_全屏宽度且居中显示_
+## Filepath
 
-<br>
+Here is the `/path/to/the/file.extend`{: .filepath}.
 
-- 指定宽度
+## Code blocks
 
-![Desktop View](/assets/img/sample/mockup.png){: width="400"}
-_400px 图片宽度_
+### Common
 
-<br>
+<!-- markdownlint-disable-next-line MD040 -->
+```
+This is a common code snippet, without syntax highlight and line number.
+```
 
-- 左对齐
+### Specific Language
 
-![Desktop View](/assets/img/sample/mockup.png){: width="350" .normal}
+```bash
+if [ $? -ne 0 ]; then
+  echo "The command was not successful.";
+  #do the needful / exit
+fi;
+```
 
-<br>
+### Specific filename
 
-- 左浮动
+```sass
+@import
+  "colors/light-typography",
+  "colors/dark-typography";
+```
+{: file='_sass/jekyll-theme-chirpy.scss'}
 
-  ![Desktop View](/assets/img/sample/mockup.png){: width="240" .left}
-  "这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。"
+## Mathematics
 
-<br>
+The mathematics powered by [**MathJax**](https://www.mathjax.org/):
 
-- 右浮动
+$$
+\begin{equation}
+  \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}
+  \label{eq:series}
+\end{equation}
+$$
 
-  ![Desktop View](/assets/img/sample/mockup.png){: width="240" .right}
-  "这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。这里使用了一段重复且无意义的文本来填充空间。"
+We can reference the equation as \eqref{eq:series}.
 
-<br>
+When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ## Mermaid SVG
 
@@ -130,112 +163,39 @@ _400px 图片宽度_
   cherry :active, c, after b a, 1d
 ```
 
-## 行内代码
+## Images
 
-这是 `行内代码` 的示例。
+### Default (with caption)
 
-## 数学公式
+![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" }
+_Full screen width and center alignment_
 
-数学公式由 [**MathJax**](https://www.mathjax.org/) 提供支持：
+### Left aligned
 
-$$ \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6} $$
+![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-75 .normal}
 
-当 \\(a \ne 0\\) 时，方程 \\(ax^2 + bx + c = 0\\) 有两个解：
+### Float to left
 
-$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .left}
+Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
-## 代码片段
+### Float to right
 
-### 通用
+![Desktop View](/posts/20190808/mockup.png){: width="972" height="589" .w-50 .right}
+Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
-```
-This is a common code snippet, without syntax highlight and line number.
-```
+### Dark/Light mode & Shadow
 
-### 指定语言
+The image below will toggle dark/light mode based on theme preference, notice it has shadows.
 
-#### Console
+![light mode only](/posts/20190808/devtools-light.png){: .light .w-75 .shadow .rounded-10 w='1212' h='668' }
+![dark mode only](/posts/20190808/devtools-dark.png){: .dark .w-75 .shadow .rounded-10 w='1212' h='668' }
 
-```console
-$ date
-Sun Nov  3 15:11:12 CST 2019
-```
+## Video
 
+{% include embed/youtube.html id='Balreaj8Yqs' %}
 
-#### Terminal
+## Reverse Footnote
 
-```terminal
-$ env |grep SHELL
-SHELL=/usr/local/bin/bash
-PYENV_SHELL=bash
-```
-
-#### Ruby
-
-```ruby
-def sum_eq_n?(arr, n)
-  return true if arr.empty? && n == 0
-  arr.product(arr).reject { |a,b| a == b }.any? { |a,b| a + b == n }
-end
-```
-
-#### Shell
-
-```shell
-if [ $? -ne 0 ]; then
-    echo "The command was not successful.";
-    #do the needful / exit
-fi;
-```
-
-#### Liquid
-
-{% raw %}
-```liquid
-{% if product.title contains 'Pack' %}
-  This product's title contains the word Pack.
-{% endif %}
-```
-{% endraw %}
-
-#### Html
-
-```html
-<div class="sidenav">
-  <a href="#contact">Contact</a>
-  <button class="dropdown-btn">Dropdown
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-  <a href="#contact">Search</a>
-</div>
-```
-
-#### Java
-
-```java
-private void writeObject(java.io.ObjectOutputStream s)
-  throws java.io.IOException {
-  // Write out any hidden serialization magic
-  s.defaultWriteObject();
-
-  // Write out HashMap capacity and load factor
-  s.writeInt(map.capacity());
-  s.writeFloat(map.loadFactor());
-
-  // Write out size
-  s.writeInt(map.size());
-
-  // Write out all elements in the proper order.
-  for (E e: map.keySet())
-    s.writeObject(e);
-}
-```
-
-## 反向脚注
-
-[^footnote]: 脚注来源。
+[^footnote]: The footnote source
+[^fn-nth-2]: The 2nd footnote source

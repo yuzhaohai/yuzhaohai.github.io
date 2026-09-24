@@ -1,38 +1,38 @@
 ---
-title: 自定义站点图标
-author: 于兆海
+title: Customize the Favicon
+author: cotes
 date: 2019-08-11 00:34:00 +0800
-categories: [博客, 教程]
-tags: [图标]
-toc: false
+categories: [Blogging, Tutorial]
+tags: [favicon]
 ---
 
-在 [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) 中，[Favicons](https://www.favicon-generator.org/about/)（站点图标）的图片文件位于 `assets/img/favicons/` 目录。你可能需要用自己制作的图标替换它们。下面来看看如何自定义这些图标。
+The [favicons](https://www.favicon-generator.org/about/) of [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/) are placed in the directory `assets/img/favicons/`{: .filepath}. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
 
-准备好一张方形图片（PNG、JPG 或 GIF），打开 [*Favicon & App Icon Generator*](https://www.favicon-generator.org/) 网站并上传你的原始图片。
+## Generate the favicon
 
-![upload-image](/assets/img/sample/upload-image.png)
+Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool [**Real Favicon Generator**](https://realfavicongenerator.net/) and click the button <kbd>Pick your favicon image</kbd> to upload your image file.
 
-点击 <kbd>Create Favicon</kbd> 按钮，稍等片刻，网站会自动生成各种尺寸的图标。
+In the next step, the webpage will show all usage scenarios. You can keep the default options, scroll to the bottom of the page, and click the button <kbd>Next →</kbd> to generate the favicon.
 
-![download-icons](/assets/img/sample/download-icons.png){: width="600"}
+## Download & Replace
 
-下载生成的压缩包，解压后从解压出的文件中删除以下两个文件：
+Download the generated package, unzip and delete the following file(s) from the extracted files:
 
-- browserconfig.xml
-- manifest.json
+- `site.webmanifest`{: .filepath}
 
-现在，将解压出的 `.zip` 文件中剩余的图片文件（`.PNG` 和 `.ICO`）复制到 `assets/img/favicons/` 文件夹中，覆盖原有文件。
+And then copy the remaining image files (`.PNG`{: .filepath}, `.ICO`{: .filepath} and `.SVG`{: .filepath}) to cover the original files in the directory `assets/img/favicons/`{: .filepath} of your Jekyll site. If your Jekyll site doesn't have this directory yet, just create one.
 
-下表帮助你了解图标文件的变更：
+The following table will help you understand the changes to the favicon files:
 
-> ✓ 表示保留，✗ 表示删除。
+| File(s) | From Online Tool | From Chirpy |
+| ------- | :--------------: | :---------: |
+| `*.PNG` |        ✓         |      ✗      |
+| `*.ICO` |        ✓         |      ✗      |
+| `*.SVG` |        ✓         |      ✗      |
 
-| 文件                 | 来自 Favicon & App Icon Generator | 来自 Chirpy |
-|---------------------|:---------------------------------:|:-----------:|
-| `*.PNG`             | ✓                                 | ✗           |
-| `*.ICO`             | ✓                                 | ✗           |
-| `browserconfig.xml` | ✗                                 | ✓           |
-| `manifest.json`     | ✗                                 | ✓           |
 
-下次构建站点时，图标将替换为自定义版本。
+<!-- markdownlint-disable-next-line -->
+>  ✓ means keep, ✗ means delete.
+{: .prompt-info }
+
+The next time you build the site, the favicon will be replaced with a customized edition.
