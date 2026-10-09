@@ -8,7 +8,7 @@ order: 4
 
 ### 个人简介
 
-性别：男 | 生日：1989.03.06 | 籍贯：临沂 | 电话：[15253913919](tel:15253913919) <button type="button" style="border:1px solid currentColor;border-radius:4px;background:transparent;padding:1px 8px;font-size:.85em;cursor:pointer;vertical-align:middle;color:inherit" onclick="navigator.clipboard.writeText('15253913919').then(function(){this.textContent='已复制'})">复制</button> | 邮箱：yuzhaohai@126.com
+性别：男 | 生日：1989.03.06 | 籍贯：临沂 | 电话：[15253913919](tel:15253913919) | 邮箱：[yuzhaohai@126.com](mailto:yuzhaohai@126.com)
 
 ### 核心优势
 
