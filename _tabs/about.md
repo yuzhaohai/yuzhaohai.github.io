@@ -6,13 +6,9 @@ order: 4
 
 ## 于兆海
 
-男 | 36 岁 | 籍贯：临沂 | 📞 15253913919 | ✉️ yuzhaohai@126.com
-
-求职意向：iOS 开发工程师 | 13 年工作经验
-
 ### 个人简介
 
-13 年 iOS 开发经验，熟悉从开发、上架到审核的全部环节，具备丰富的 App Store 上架实战经验。追求以最快的速度、最精炼的代码完成交付，项目经验近百，其中半数独立研发。热爱技术、乐于分享，开源了专注提升开发效率的小工具 [ZHTools_OC](https://github.com/yuzhaohai/ZHTools_OC)，欢迎一起探讨。
+性别：男 | 生日：1989.03.06 | 籍贯：临沂 | 电话：[15253913919](tel:15253913919) <button type="button" style="border:1px solid currentColor;border-radius:4px;background:transparent;padding:1px 8px;font-size:.85em;cursor:pointer;vertical-align:middle;color:inherit" onclick="navigator.clipboard.writeText('15253913919').then(function(){this.textContent='已复制'})">复制</button> | 邮箱：yuzhaohai@126.com
 
 ### 核心优势
 
