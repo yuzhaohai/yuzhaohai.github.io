@@ -1,0 +1,779 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="index,follow"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title></title><meta name="theme-color" content="#FFFFFF"><meta name="msapplication-TileColor" content="#1BC3FB"><meta name="msapplication-config" content="/favicon/browserconfig.xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="mask-icon" color="#1E5AA8" href="/favicon/favicon.svg"><link rel="manifest" href="/favicon/site.webmanifest"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/page.css"><meta name="generator" content="Hexo 6.3.0"></head><body class="docs"><div id="mobile-bar"><a class="menu-button fas fa-bars"></a><h2 class="nav-title"></h2></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script><script>Vue.config.productionTip=!1,window.PAGE_TYPE="resume"</script><div id="main" class="fix-sidebar"><div class="sidebar"><div class="sidebar-inner"><header class="header"><h2></h2><div class="meta"></div><hr><br></header><div class="list"><ul class="menu-root"><li><a href="/index.html" class="sidebar-link current"></a></li><li><a href="/en/index.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock-2.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/json-tree.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/shudu.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/snake.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/sudoku.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock.html" class="sidebar-link current"></a></li></ul></div></div></div><div class="content with-sidebar"><div class="resume-header"><h1 class="resume-title"></h1></div><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>晨曦时钟</title><link rel="icon" href="/assets/img/favicons/favicon-96x96.png"><style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI','Microsoft YaHei',sans-serif}body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d);color:#fff;padding:20px}.container{width:100%;max-width:500px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border-radius:24px;padding:30px;box-shadow:0 15px 35px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.2)}h1{text-align:center;margin-bottom:30px;font-size:32px;text-shadow:0 2px 5px rgba(0,0,0,.2)}.clock-container{display:flex;flex-direction:column;align-items:center;margin-bottom:30px}.analog-clock{width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.1);position:relative;margin-bottom:25px;border:12px solid rgba(255,255,255,.2);box-shadow:inset 0 0 25px rgba(0,0,0,.1),0 5px 25px rgba(0,0,0,.2)}.clock-center{position:absolute;top:50%;left:50%;width:18px;height:18px;background:#ff4757;border-radius:50%;transform:translate(-50%,-50%);z-index:10;box-shadow:0 0 10px rgba(255,71,87,.7)}.hour-hand,.minute-hand,.second-hand{position:absolute;transform-origin:bottom center;border-radius:10px;transition:transform .2s cubic-bezier(.4,2.3,.8,1)}.hour-hand{width:8px;height:70px;background:#fff;top:calc(50% - 70px);left:calc(50% - 4px);box-shadow:0 0 5px rgba(0,0,0,.3)}.minute-hand{width:6px;height:100px;background:#fff;top:calc(50% - 100px);left:calc(50% - 3px);box-shadow:0 0 5px rgba(0,0,0,.3)}.second-hand{width:2px;height:110px;background:#ff4757;top:calc(50% - 110px);left:calc(50% - 1px);box-shadow:0 0 5px rgba(255,71,87,.7)}.clock-numbers{position:absolute;width:100%;height:100%;text-align:center;font-weight:700}.number{position:absolute;width:36px;height:36px;line-height:36px;font-size:20px;transform-origin:center;text-shadow:0 2px 3px rgba(0,0,0,.3)}.digital-clock{font-size:42px;font-weight:700;margin:20px 0;text-align:center;background:rgba(0,0,0,.2);padding:15px 25px;border-radius:15px;letter-spacing:3px;box-shadow:0 5px 15px rgba(0,0,0,.2)}.date-display{font-size:20px;margin-bottom:10px;text-align:center;opacity:.9}.alarm-section{background:rgba(255,255,255,.1);padding:25px;border-radius:20px;margin-top:25px;border:1px solid rgba(255,255,255,.15);display:none}.alarm-title{font-size:24px;margin-bottom:20px;text-align:center;text-shadow:0 2px 3px rgba(0,0,0,.2)}.alarm-controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;flex-wrap:wrap}.time-select{width:80px;padding:12px;border:none;border-radius:10px;background:rgba(255,255,255,.2);color:#fff;font-size:20px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.2)}.set-alarm-btn{padding:14px 30px;background:linear-gradient(to right,#ff4757,#ff3742);color:#fff;border:none;border-radius:10px;font-size:18px;cursor:pointer;transition:all .3s;box-shadow:0 5px 15px rgba(255,71,87,.4);flex-grow:1;margin-left:15px}.set-alarm-btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,71,87,.6)}.set-alarm-btn:active{transform:translateY(-1px)}.alarm-list{max-height:250px;overflow-y:auto;padding-right:5px}.alarm-list::-webkit-scrollbar{width:6px}.alarm-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:3px}.alarm-item{display:flex;justify-content:space-between;align-items:center;padding:15px;background:rgba(255,255,255,.1);margin-bottom:12px;border-radius:12px;transition:all .3s}.alarm-item:hover{background:rgba(255,255,255,.15);transform:translateX(5px)}.delete-alarm{background:rgba(255,255,255,.2);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .3s}.delete-alarm:hover{background:rgba(255,71,87,.7);transform:rotate(90deg)}.alarm-active{color:#ffdd59;font-weight:700}.alarm-time{font-size:22px;font-weight:700}.features{display:flex;justify-content:space-between;margin-top:20px}.feature-btn{padding:12px 20px;background:rgba(255,255,255,.15);border:none;border-radius:10px;color:#fff;font-size:16px;cursor:pointer;transition:all .3s;flex:1;margin:0 5px}.feature-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}@media (max-width:480px){.analog-clock{width:220px;height:220px}.digital-clock{font-size:32px}.alarm-controls{flex-direction:column}.time-select{margin-bottom:15px;width:100%}.set-alarm-btn{margin-left:0;width:100%}.features{flex-direction:column}.feature-btn{margin:5px 0}}.alarm-ringing{animation:pulse 1s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,71,87,.7)}70%{box-shadow:0 0 0 20px rgba(255,71,87,0)}100%{box-shadow:0 0 0 0 rgba(255,71,87,0)}}.alarm-dialog{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:1000}.alarm-dialog-content{background:#fff;color:#333;padding:30px;border-radius:20px;text-align:center;max-width:400px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,.3)}.alarm-dialog h2{color:#ff4757;margin-bottom:15px;font-size:28px}.alarm-dialog p{font-size:18px;margin-bottom:25px;line-height:1.5}.alarm-dialog-buttons{display:flex;justify-content:center;gap:15px}.alarm-dialog-btn{padding:12px 25px;border:none;border-radius:10px;font-size:16px;cursor:pointer;transition:all .3s}.snooze-btn{background:#3498db;color:#fff}.stop-btn{background:#ff4757;color:#fff}.alarm-dialog-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.2)}.about-dialog{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:1000}.about-dialog-content{background:#fff;color:#333;padding:30px;border-radius:20px;text-align:center;max-width:400px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,.3);max-height:80vh;overflow-y:auto}.about-dialog h2{color:#1a2a6c;margin-bottom:20px;font-size:28px}.about-info{text-align:left;margin-bottom:20px;line-height:1.6}.about-info p{margin-bottom:10px}.update-log{text-align:left;margin-top:20px}.update-log-header{background:#f0f0f0;padding:10px 15px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.update-log-content{background:#f8f8f8;padding:15px;border-radius:8px;display:none}.update-log-content.show{display:block}</style></head><body><div class="container"><h1></h1><div class="clock-container"><div class="analog-clock"><div class="clock-center"></div><div class="hour-hand"></div><div class="minute-hand"></div><div class="second-hand"></div><div class="clock-numbers"></div></div><div class="digital-clock">00:00:00</div><div class="date-display">2023年1月1日 星期一</div></div><div class="alarm-section"><h2 class="alarm-title">闹钟设置</h2><div class="alarm-controls"><select id="hour-select" class="time-select"></select> <span style="font-size:28px;margin:0 10px">:</span> <select id="minute-select" class="time-select"></select> <button id="set-alarm" class="set-alarm-btn">设置闹钟</button></div><div class="alarm-list" id="alarm-list"></div><div class="features"><button id="test-alarm" class="feature-btn">测试闹钟</button> <button id="vibration-toggle" class="feature-btn">振动:开启</button> <button id="snooze-btn" class="feature-btn">贪睡(5分钟)</button> <button id="about-btn" class="feature-btn">关于</button></div></div></div><script>// 初始化时钟数字
+        function initClockNumbers() {
+            const clockNumbers = document.querySelector('.clock-numbers');
+            for (let i = 1; i <= 12; i++) {
+                const number = document.createElement('div');
+                number.className = 'number';
+                number.textContent = i;
+                
+                // 计算每个数字的位置
+                const angle = (i * 30) * (Math.PI / 180);
+                const radius = 120; // 时钟半径
+                const x = Math.sin(angle) * radius;
+                const y = -Math.cos(angle) * radius;
+                
+                number.style.left = `calc(50% + ${x}px - 18px)`;
+                number.style.top = `calc(50% + ${y}px - 18px)`;
+                
+                clockNumbers.appendChild(number);
+            }
+        }
+        
+        // 初始化时间选择器
+        function initTimeSelectors() {
+            const hourSelect = document.getElementById('hour-select');
+            const minuteSelect = document.getElementById('minute-select');
+            
+            // 添加小时选项
+            for (let i = 0; i < 24; i++) {
+                const option = document.createElement('option');
+                option.value = i < 10 ? `0${i}` : i;
+                option.textContent = i < 10 ? `0${i}` : i;
+                hourSelect.appendChild(option);
+            }
+            
+            // 添加分钟选项
+            for (let i = 0; i < 60; i++) {
+                const option = document.createElement('option');
+                option.value = i < 10 ? `0${i}` : i;
+                option.textContent = i < 10 ? `0${i}` : i;
+                minuteSelect.appendChild(option);
+            }
+            
+            // 设置默认时间为当前时间+5分钟
+            const now = new Date();
+            hourSelect.value = now.getHours() < 10 ? `0${now.getHours()}` : now.getHours();
+            minuteSelect.value = (now.getMinutes() + 5) % 60 < 10 ? `0${(now.getMinutes() + 5) % 60}` : (now.getMinutes() + 5) % 60;
+        }
+        
+        // 更新时钟
+        function updateClock() {
+            const now = new Date();
+            
+            // 更新模拟时钟 - 修复时针位置计算
+            const secondHand = document.querySelector('.second-hand');
+            const minuteHand = document.querySelector('.minute-hand');
+            const hourHand = document.querySelector('.hour-hand');
+            
+            const seconds = now.getSeconds();
+            const minutes = now.getMinutes();
+            const hours = now.getHours() % 12;
+            
+            // 修复指针角度计算
+            const secondDeg = (seconds * 6); // 0度从12点开始
+            const minuteDeg = (minutes * 6) + (seconds * 0.1);
+            const hourDeg = (hours * 30) + (minutes * 0.5);
+            
+            secondHand.style.transform = `rotate(${secondDeg}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+            hourHand.style.transform = `rotate(${hourDeg}deg)`;
+            
+            // 更新数字时钟 - 确保与模拟时钟同步
+            const digitalClock = document.querySelector('.digital-clock');
+            const timeString = now.toTimeString().split(' ')[0]; // 获取HH:MM:SS格式
+            digitalClock.textContent = timeString;
+            
+            // 更新日期显示
+            const dateDisplay = document.querySelector('.date-display');
+            const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+            dateDisplay.textContent = now.toLocaleDateString('zh-CN', options);
+            
+            // 检查闹钟
+            checkAlarms(now);
+        }
+        
+        // 闹钟数组
+        let alarms = [];
+        let activeAlarm = null;
+        let vibrationEnabled = true;
+        let alarmAudio = null;
+        let alarmInterval = null;
+        let vibrationInterval = null;
+        
+        // 设置闹钟
+        function setupAlarm() {
+            const hourSelect = document.getElementById('hour-select');
+            const minuteSelect = document.getElementById('minute-select');
+            
+            const hour = hourSelect.value;
+            const minute = minuteSelect.value;
+            
+            const alarmTime = `${hour}:${minute}`;
+            
+            // 检查是否已存在相同时间的闹钟
+            if (alarms.includes(alarmTime)) {
+                alert('该时间已设置闹钟！');
+                return;
+            }
+            
+            // 添加新闹钟
+            alarms.push(alarmTime);
+            renderAlarms();
+            
+            // 保存到本地存储
+            saveAlarms();
+            
+            // 在5+环境中创建本地通知
+            if (window.plus) {
+                createAlarmNotification(alarmTime);
+            }
+            
+            alert(`已设置闹钟: ${alarmTime}`);
+        }
+        
+        // 修复通知创建功能
+        function createAlarmNotification(alarmTime) {
+            const [hours, minutes] = alarmTime.split(':');
+            const now = new Date();
+            const alarmDate = new Date();
+            alarmDate.setHours(parseInt(hours));
+            alarmDate.setMinutes(parseInt(minutes));
+            alarmDate.setSeconds(0);
+            
+            if (alarmDate < now) {
+                alarmDate.setDate(alarmDate.getDate() + 1);
+            }
+            
+            try {
+                // 使用5+本地通知
+                const options = {
+                    title: "晨曦时钟",
+                    content: `闹钟时间到了！${alarmTime}`,
+                    cover: false,
+                    when: alarmDate,
+                    sound: "system",
+                    vibrate: true
+                };
+                
+                // 创建通知
+                const notification = plus.push.createMessage(
+                    `闹钟: ${alarmTime}`,
+                    `闹钟时间到了！`,
+                    options
+                );
+                
+                // 安全地获取通知ID
+                let notificationId;
+                if (notification && notification.id) {
+                    notificationId = notification.id;
+                } else {
+                    notificationId = `alarm_${alarmTime}_${Date.now()}`;
+                }
+                
+                // 保存通知信息
+                const alarmData = {
+                    time: alarmTime,
+                    notificationId: notificationId,
+                    timestamp: alarmDate.getTime()
+                };
+                
+                let alarmNotifications = JSON.parse(localStorage.getItem('alarmNotifications') || '[]');
+                alarmNotifications.push(alarmData);
+                localStorage.setItem('alarmNotifications', JSON.stringify(alarmNotifications));
+                
+            } catch (error) {
+                console.error('创建通知失败:', error);
+                createHTML5Notification(alarmTime, alarmDate);
+            }
+        }
+
+        
+        // HTML5通知备选方案
+        function createHTML5Notification(alarmTime, alarmDate) {
+            if ("Notification" in window && Notification.permission === "granted") {
+                const timeout = alarmDate.getTime() - Date.now();
+                if (timeout > 0) {
+                    setTimeout(() => {
+                        new Notification("晨曦时钟", {
+                            body: `闹钟时间到：${alarmTime}`,
+                            icon: "/icon.png",
+                            requireInteraction: true
+                        });
+                    }, timeout);
+                }
+            }
+        }
+
+        
+        // 删除闹钟
+        function deleteAlarm(index) {
+            const alarmTime = alarms[index];
+            alarms.splice(index, 1);
+            renderAlarms();
+            
+            // 保存到本地存储
+            saveAlarms();
+            
+            // 取消对应的通知（5+ API）
+            if (window.plus) {
+                cancelAlarmNotification(alarmTime);
+            }
+        }
+        
+        // 取消闹钟通知
+        function cancelAlarmNotification(alarmTime) {
+            let alarmNotifications = JSON.parse(localStorage.getItem('alarmNotifications') || '[]');
+            alarmNotifications = alarmNotifications.filter(item => {
+                if (item.time === alarmTime) {
+                    // 取消通知
+                    plus.push.clearMessage(item.notificationId);
+                    return false;
+                }
+                return true;
+            });
+            localStorage.setItem('alarmNotifications', JSON.stringify(alarmNotifications));
+        }
+        
+        // 渲染闹钟列表
+        function renderAlarms() {
+            const alarmList = document.getElementById('alarm-list');
+            alarmList.innerHTML = '';
+            
+            if (alarms.length === 0) {
+                alarmList.innerHTML = '<div style="text-align: center; padding: 20px; opacity: 0.7;">暂无闹钟设置</div>';
+                return;
+            }
+            
+            alarms.forEach((alarm, index) => {
+                const alarmItem = document.createElement('div');
+                alarmItem.className = 'alarm-item';
+                
+                const alarmTime = document.createElement('div');
+                alarmTime.className = 'alarm-time';
+                alarmTime.textContent = alarm;
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-alarm';
+                deleteBtn.textContent = '×';
+                deleteBtn.onclick = () => deleteAlarm(index);
+                
+                alarmItem.appendChild(alarmTime);
+                alarmItem.appendChild(deleteBtn);
+                
+                alarmList.appendChild(alarmItem);
+            });
+        }
+        
+        // 检查闹钟
+        function checkAlarms(now) {
+            if (activeAlarm) return; // 如果已有闹钟在响，不再检查
+            
+            const currentTime = `${now.getHours() < 10 ? '0' + now.getHours() : now.getHours()}:${now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes()}`;
+            
+            if (alarms.includes(currentTime)) {
+                // 触发闹钟
+                triggerAlarm(currentTime);
+            }
+        }
+        
+        // 触发闹钟 - 修复触发逻辑
+        function triggerAlarm(time) {
+            activeAlarm = time;
+			
+			// 触发安卓自动亮屏
+			androidWakeScreen();
+            
+            // 立即开始响铃和振动
+            startAlarmEffects();
+            
+            // 显示闹钟提醒对话框
+            showAlarmDialog(time);
+        }
+        
+        // 开始闹钟效果（铃声和振动）
+        function startAlarmEffects() {
+            // 添加响铃动画
+            document.querySelector('.container').classList.add('alarm-ringing');
+            
+            // 播放闹钟声音
+            playAlarmSound();
+            
+            // 振动（5+ API）
+            if (vibrationEnabled && window.plus) {
+                // 立即振动一次
+                plus.device.vibrate(1000);
+                // 设置重复振动
+                vibrationInterval = setInterval(() => {
+                    if (activeAlarm) {
+                        plus.device.vibrate(1000);
+                    } else {
+                        clearInterval(vibrationInterval);
+                    }
+                }, 2000);
+            }
+        }
+        
+        // 停止闹钟效果
+        function stopAlarmEffects() {
+            // 移除响铃动画
+            document.querySelector('.container').classList.remove('alarm-ringing');
+            
+            // 停止声音
+            if (alarmAudio) {
+                alarmAudio.oscillator.stop();
+                alarmAudio.context.close();
+                alarmAudio = null;
+            }
+            
+            // 停止振动
+            if (vibrationInterval) {
+                clearInterval(vibrationInterval);
+                vibrationInterval = null;
+            }
+        }
+        
+        // 播放闹钟声音
+        function playAlarmSound() {
+            try {
+                // 创建音频上下文
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                const audioContext = new AudioContext();
+                
+                // 创建振荡器
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                // 设置声音参数
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                
+                // 设置音量变化（脉冲效果）
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                
+                // 开始播放
+                oscillator.start();
+                
+                // 保存音频上下文以便停止
+                alarmAudio = {
+                    context: audioContext,
+                    oscillator: oscillator,
+                    gainNode: gainNode
+                };
+                
+                // 设置重复播放
+                alarmInterval = setInterval(() => {
+                    if (activeAlarm && alarmAudio) {
+                        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+                    } else {
+                        clearInterval(alarmInterval);
+                    }
+                }, 1000);
+            } catch (error) {
+                console.error('音频播放错误:', error);
+            }
+        }
+        
+        // 显示闹钟提醒对话框
+        function showAlarmDialog(time) {
+            // 创建对话框
+            const dialog = document.createElement('div');
+            dialog.className = 'alarm-dialog';
+            dialog.innerHTML = `
+                <div class="alarm-dialog-content">
+                    <h2>⏰ 闹钟提醒</h2>
+                    <p>闹钟时间到：<strong>${time}</strong></p>
+                    <div class="alarm-dialog-buttons">
+                        <button class="alarm-dialog-btn snooze-btn">贪睡(5分钟)</button>
+                        <button class="alarm-dialog-btn stop-btn">关闭闹钟</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(dialog);
+            
+            // 绑定按钮事件
+            dialog.querySelector('.snooze-btn').addEventListener('click', () => {
+                document.body.removeChild(dialog);
+                snoozeAlarm();
+            });
+            
+            dialog.querySelector('.stop-btn').addEventListener('click', () => {
+                document.body.removeChild(dialog);
+                stopAlarm();
+            });
+        }
+        
+        // 停止闹钟
+        function stopAlarm() {
+            stopAlarmEffects();
+			
+			// 关闭亮屏
+			androidReleaseWakeScreen();
+            
+            // 从闹钟列表中移除当前闹钟
+            const index = alarms.indexOf(activeAlarm);
+            if (index !== -1) {
+                deleteAlarm(index);
+            }
+            
+            activeAlarm = null;
+        }
+        
+        // 贪睡功能
+        function snoozeAlarm() {
+            stopAlarmEffects();
+            
+            // 计算5分钟后的时间
+            const now = new Date();
+            now.setMinutes(now.getMinutes() + 5);
+            
+            const snoozeTime = `${now.getHours() < 10 ? '0' + now.getHours() : now.getHours()}:${now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes()}`;
+            
+            // 添加贪睡闹钟
+            if (!alarms.includes(snoozeTime)) {
+                alarms.push(snoozeTime);
+                renderAlarms();
+                saveAlarms();
+                
+                // 创建贪睡闹钟的通知
+                if (window.plus) {
+                    createAlarmNotification(snoozeTime);
+                }
+            }
+            
+            activeAlarm = null;
+            alert(`已设置贪睡闹钟: ${snoozeTime}`);
+        }
+        
+        // 测试闹钟
+        function testAlarm() {
+            if (!activeAlarm) {
+                const now = new Date();
+                const testTime = `${now.getHours() < 10 ? '0' + now.getHours() : now.getHours()}:${now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes()}`;
+                triggerAlarm(testTime);
+            } else {
+                alert('已有闹钟正在响铃，请先关闭当前闹钟');
+            }
+        }
+        
+        // 切换振动功能
+        function toggleVibration() {
+            vibrationEnabled = !vibrationEnabled;
+            const vibrationBtn = document.getElementById('vibration-toggle');
+            vibrationBtn.textContent = `振动:${vibrationEnabled ? '开启' : '关闭'}`;
+            
+            // 保存设置
+            localStorage.setItem('vibrationEnabled', vibrationEnabled);
+        }
+        
+        // 保存闹钟到本地存储
+        function saveAlarms() {
+            localStorage.setItem('alarms', JSON.stringify(alarms));
+        }
+        
+        // 从本地存储加载闹钟
+        function loadAlarms() {
+            const savedAlarms = localStorage.getItem('alarms');
+            if (savedAlarms) {
+                alarms = JSON.parse(savedAlarms);
+                renderAlarms();
+            }
+            
+            // 加载振动设置
+            const savedVibration = localStorage.getItem('vibrationEnabled');
+            if (savedVibration !== null) {
+                vibrationEnabled = JSON.parse(savedVibration);
+                const vibrationBtn = document.getElementById('vibration-toggle');
+                vibrationBtn.textContent = `振动:${vibrationEnabled ? '开启' : '关闭'}`;
+            }
+        }
+		
+		// 修复亮屏功能
+		function androidWakeScreen() {
+		    if (window.plus) {
+		        try {
+		            // 方法1: 使用5+的device模块设置常亮
+		            plus.device.setWakelock(true);
+		            console.log('屏幕常亮已开启');
+		            
+		            // 方法2: 使用navigator保持屏幕唤醒（检查方法是否存在）
+		            if (plus.navigator && typeof plus.navigator.setKeepScreenOn === 'function') {
+		                plus.navigator.setKeepScreenOn(true);
+		            }
+		            
+		            // 方法3: 使用原生插件
+		            if (typeof plus.android !== 'undefined') {
+		                wakeScreenWithPowerManager();
+		            }
+		            
+		        } catch (error) {
+		            console.error('亮屏功能错误:', error);
+		            wakeScreenWithHTML5();
+		        }
+		    } else {
+		        wakeScreenWithHTML5();
+		    }
+		}
+
+		
+		// 使用Android PowerManager进行亮屏（Native.js方式）
+		function wakeScreenWithPowerManager() {
+		    try {
+		        const main = plus.android.runtimeMainActivity();
+		        const Context = plus.android.importClass('android.content.Context');
+		        const PowerManager = plus.android.importClass('android.os.PowerManager');
+		        const WindowManager = plus.android.importClass('android.view.WindowManager');
+		        
+		        // 获取PowerManager服务
+		        const powerManager = main.getSystemService(Context.POWER_SERVICE);
+		        
+		        // 获取WakeLock
+		        const wakeLock = powerManager.newWakeLock(
+		            PowerManager.SCREEN_BRIGHT_WAKE_LOCK | 
+		            PowerManager.ACQUIRE_CAUSES_WAKEUP | 
+		            PowerManager.ON_AFTER_RELEASE, 
+		            "AlarmClock:WakeLock"
+		        );
+		        
+		        // 获取WakeLock（带超时）
+		        wakeLock.acquire(30000); // 30秒超时
+		        
+		        // 同时设置Activity标志保持屏幕唤醒
+		        main.getWindow().addFlags(
+		            WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
+		            WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON |
+		            WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+		        );
+		        
+		        console.log('PowerManager亮屏成功');
+		        
+		    } catch (error) {
+		        console.error('PowerManager亮屏失败:', error);
+		    }
+		}
+		
+		// HTML5备选亮屏方案
+		function wakeScreenWithHTML5() {
+		    try {
+		        // 使用Wake Lock API（现代浏览器支持）
+		        if ('wakeLock' in navigator) {
+		            navigator.wakeLock.request('screen')
+		                .then(wakeLock => {
+		                    console.log('屏幕唤醒锁定已激活');
+		                    // 可以保存wakeLock引用以便后续释放
+		                    window.screenWakeLock = wakeLock;
+		                })
+		                .catch(err => {
+		                    console.error('Wake Lock API错误:', err);
+		                });
+		        }
+		        
+		        // 创建全屏视频元素强制亮屏（备选方案）
+		        const video = document.createElement('video');
+		        video.setAttribute('playsinline', '');
+		        video.setAttribute('webkit-playsinline', '');
+		        video.style.position = 'fixed';
+		        video.style.top = '0';
+		        video.style.left = '0';
+		        video.style.width = '1px';
+		        video.style.height = '1px';
+		        video.style.opacity = '0';
+		        video.style.pointerEvents = 'none';
+		        video.setAttribute('muted', '');
+		        video.muted = true;
+		        
+		        // 创建一个透明的视频源
+		        const canvas = document.createElement('canvas');
+		        canvas.width = 2;
+		        canvas.height = 2;
+		        const ctx = canvas.getContext('2d');
+		        ctx.fillStyle = 'black';
+		        ctx.fillRect(0, 0, 2, 2);
+		        
+		        const stream = canvas.captureStream();
+		        video.srcObject = stream;
+		        
+		        document.body.appendChild(video);
+		        
+		        // 播放视频以保持屏幕唤醒
+		        video.play().then(() => {
+		            console.log('视频播放亮屏已激活');
+		            window.keepAliveVideo = video;
+		        }).catch(err => {
+		            console.error('视频播放亮屏失败:', err);
+		            document.body.removeChild(video);
+		        });
+		        
+		    } catch (error) {
+		        console.error('HTML5亮屏失败:', error);
+		    }
+		}
+		
+		// 关闭亮屏功能
+		function androidReleaseWakeScreen() {
+		    if (window.plus) {
+		        try {
+		            // 关闭5+的常亮设置
+		            plus.device.setWakelock(false);
+		            plus.navigator.setKeepScreenOn(false);
+		            console.log('屏幕常亮已关闭');
+		        } catch (error) {
+		            console.error('关闭亮屏功能错误:', error);
+		        }
+		    }
+		    
+		    // 关闭HTML5 Wake Lock
+		    if (window.screenWakeLock) {
+		        window.screenWakeLock.release()
+		            .then(() => {
+		                console.log('屏幕唤醒锁定已释放');
+		                window.screenWakeLock = null;
+		            })
+		            .catch(err => {
+		                console.error('释放Wake Lock失败:', err);
+		            });
+		    }
+		    
+		    // 关闭视频元素
+		    if (window.keepAliveVideo) {
+		        window.keepAliveVideo.pause();
+		        window.keepAliveVideo.srcObject = null;
+		        if (window.keepAliveVideo.parentNode) {
+		            window.keepAliveVideo.parentNode.removeChild(window.keepAliveVideo);
+		        }
+		        window.keepAliveVideo = null;
+		    }
+		}
+
+        
+       // 初始化应用
+       function initApp() {
+           initClockNumbers();
+           initTimeSelectors();
+           loadAlarms();
+           
+           // 设置时钟更新间隔
+           setInterval(updateClock, 1000);
+           updateClock(); // 立即更新一次
+           
+           // 绑定设置闹钟按钮事件
+           document.getElementById('set-alarm').addEventListener('click', setupAlarm);
+           
+           // 绑定测试闹钟按钮事件
+           document.getElementById('test-alarm').addEventListener('click', testAlarm);
+           
+           // 绑定关于按钮事件
+           document.getElementById('about-btn').addEventListener('click', showAboutDialog);
+           
+           // 绑定振动切换按钮事件
+           document.getElementById('vibration-toggle').addEventListener('click', toggleVibration);
+           
+           // 绑定贪睡按钮事件
+           document.getElementById('snooze-btn').addEventListener('click', () => {
+               if (activeAlarm) {
+                   snoozeAlarm();
+               } else {
+                   alert('当前没有激活的闹钟');
+               }
+           });
+           
+           // 5+环境初始化 - 修改这部分
+           if (window.plus) {
+               // 设置后台运行
+               plus.runtime.setBadgeNumber(0); // 清除角标
+               
+               document.addEventListener('pause', function() {
+                   console.log('应用进入后台，闹钟服务保持运行');
+                   // 确保闹钟数据已保存
+                   saveAlarms();
+               });
+               
+               document.addEventListener('resume', function() {
+                   console.log('应用回到前台');
+                   updateClock();
+                   // 检查是否有错过的闹钟
+                   checkMissedAlarms();
+               });
+               
+               // 监听通知点击事件
+               plus.push.addEventListener('click', function(msg) {
+                   if (msg.content && msg.content.includes('闹钟')) {
+                       // 用户点击了闹钟通知
+                       const alarmTime = msg.content.split(':')[1]?.trim();
+                       if (alarmTime) {
+                           triggerAlarm(alarmTime);
+                       }
+                   }
+               });
+           }
+       }
+
+
+            
+
+        
+        // 当页面加载完成后初始化应用
+        document.addEventListener('DOMContentLoaded', initApp);
+		
+
+		
+		// 显示关于对话框
+		function showAboutDialog() {
+		    const dialog = document.createElement('div');
+		    dialog.className = 'about-dialog';
+		    dialog.innerHTML = `
+		        <div class="about-dialog-content">
+		            <h2>关于 晨曦时钟</h2>
+		            <div class="about-info">
+		                <p><strong>开发者：</strong>天际的晨曦 (@hsy2005)</p>
+		                <p><strong>版本号：</strong>v1.0.1</p>
+		                <p><strong>版权：</strong>Copyright 2025 @hsy2005（天际的晨曦）| All Rights Reserved.</p>
+		                <p>版权所有，侵权必究。</p>
+		            </div>
+		            <div class="update-log">
+		                <div class="update-log-header" id="update-log-header">
+		                    <span>更新日志</span>
+		                    <span>▼</span>
+		                </div>
+		                <div class="update-log-content" id="update-log-content">
+		                    <!-- 将两个版本日志放在同一个容器内 -->
+		                    <div class="version-log">
+		                        <p><strong>v1.0.1 (2026.1.18)</strong></p>
+		                        <p>添加了缺失的权限，并加入了前台服务权限</p>
+		                    </div>
+		                    <div class="version-log">
+		                        <p><strong>v1.0.0 (2025.11.14)</strong></p>
+		                        <p>晨曦时钟app上线，具有简洁界面，还有指针和数字两种时间显示方式，具备闹钟功能，支持贪睡，响铃，震动，后台提醒！</p>
+		                    </div>
+		                </div>
+		            </div>
+		            <button class="alarm-dialog-btn stop-btn" style="margin-top: 20px;">关闭</button>
+		        </div>
+		    `;
+		    
+		    document.body.appendChild(dialog);
+		    
+		    // 绑定更新日志展开/折叠事件
+		    const logHeader = dialog.querySelector('#update-log-header');
+		    const logContent = dialog.querySelector('#update-log-content');
+		    
+		    logHeader.addEventListener('click', () => {
+		        logContent.classList.toggle('show');
+		        const arrow = logHeader.querySelector('span:last-child');
+		        arrow.textContent = logContent.classList.contains('show') ? '▲' : '▼';
+		    });
+		    
+		    // 绑定关闭按钮事件
+		    dialog.querySelector('button').addEventListener('click', () => {
+		        document.body.removeChild(dialog);
+		    });
+		}
+
+		
+		// 检查错过的闹钟
+		function checkMissedAlarms() {
+		    const now = new Date();
+		    const currentTime = `${now.getHours() < 10 ? '0' + now.getHours() : now.getHours()}:${now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes()}`;
+		    
+		    // 检查是否有应该响但没响的闹钟
+		    alarms.forEach(alarm => {
+		        if (alarm === currentTime && !activeAlarm) {
+		            triggerAlarm(alarm);
+		        }
+		    });
+		}</script></body></html></div></div><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/smooth-scroll.min.js"></script><footer id="footer"><p></p><p><a href="/">© 2026 于兆海</a></p><p></p></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/common.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/css.escape.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5/dist/jquery.fancybox.min.js"></script><script>let LAZY_LOAD_IMAGE="[object Object]";$("body").find("fancybox").find("img").each((function(){var t=document.createElement("a");$(t).attr("data-fancybox","gallery"),$(t).attr("href",$(this).attr("src")),LAZY_LOAD_IMAGE&&$(t).attr("href",$(this).attr("data-original")),$(this).wrap(t)}))</script></body></html>
