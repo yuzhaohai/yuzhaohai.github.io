@@ -1,4 +1,524 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="index,follow"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title></title><meta name="theme-color" content="#FFFFFF"><meta name="msapplication-TileColor" content="#1BC3FB"><meta name="msapplication-config" content="/favicon/browserconfig.xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="mask-icon" color="#1E5AA8" href="/favicon/favicon.svg"><link rel="manifest" href="/favicon/site.webmanifest"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/page.css"><meta name="generator" content="Hexo 6.3.0"></head><body class="docs"><div id="mobile-bar"><a class="menu-button fas fa-bars"></a><h2 class="nav-title"></h2></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script><script>Vue.config.productionTip=!1,window.PAGE_TYPE="resume"</script><div id="main" class="fix-sidebar"><div class="sidebar"><div class="sidebar-inner"><header class="header"><h2></h2><div class="meta"></div><hr><br></header><div class="list"><ul class="menu-root"><li><a href="/index.html" class="sidebar-link current"></a></li><li><a href="/en/index.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock-2.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/json-tree.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/shudu.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/snake.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/sudoku.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock.html" class="sidebar-link current"></a></li></ul></div></div></div><div class="content with-sidebar"><div class="resume-header"><h1 class="resume-title"></h1></div><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>晨曦时钟</title><link rel="icon" href="/assets/img/favicons/favicon-96x96.png"><style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI','Microsoft YaHei',sans-serif}body{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d);color:#fff;padding:20px}.container{width:100%;max-width:500px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border-radius:24px;padding:30px;box-shadow:0 15px 35px rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.2)}h1{text-align:center;margin-bottom:30px;font-size:32px;text-shadow:0 2px 5px rgba(0,0,0,.2)}.clock-container{display:flex;flex-direction:column;align-items:center;margin-bottom:30px}.analog-clock{width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.1);position:relative;margin-bottom:25px;border:12px solid rgba(255,255,255,.2);box-shadow:inset 0 0 25px rgba(0,0,0,.1),0 5px 25px rgba(0,0,0,.2)}.clock-center{position:absolute;top:50%;left:50%;width:18px;height:18px;background:#ff4757;border-radius:50%;transform:translate(-50%,-50%);z-index:10;box-shadow:0 0 10px rgba(255,71,87,.7)}.hour-hand,.minute-hand,.second-hand{position:absolute;transform-origin:bottom center;border-radius:10px;transition:transform .2s cubic-bezier(.4,2.3,.8,1)}.hour-hand{width:8px;height:70px;background:#fff;top:calc(50% - 70px);left:calc(50% - 4px);box-shadow:0 0 5px rgba(0,0,0,.3)}.minute-hand{width:6px;height:100px;background:#fff;top:calc(50% - 100px);left:calc(50% - 3px);box-shadow:0 0 5px rgba(0,0,0,.3)}.second-hand{width:2px;height:110px;background:#ff4757;top:calc(50% - 110px);left:calc(50% - 1px);box-shadow:0 0 5px rgba(255,71,87,.7)}.clock-numbers{position:absolute;width:100%;height:100%;text-align:center;font-weight:700}.number{position:absolute;width:36px;height:36px;line-height:36px;font-size:20px;transform-origin:center;text-shadow:0 2px 3px rgba(0,0,0,.3)}.digital-clock{font-size:42px;font-weight:700;margin:20px 0;text-align:center;background:rgba(0,0,0,.2);padding:15px 25px;border-radius:15px;letter-spacing:3px;box-shadow:0 5px 15px rgba(0,0,0,.2)}.date-display{font-size:20px;margin-bottom:10px;text-align:center;opacity:.9}.alarm-section{background:rgba(255,255,255,.1);padding:25px;border-radius:20px;margin-top:25px;border:1px solid rgba(255,255,255,.15);display:none}.alarm-title{font-size:24px;margin-bottom:20px;text-align:center;text-shadow:0 2px 3px rgba(0,0,0,.2)}.alarm-controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;flex-wrap:wrap}.time-select{width:80px;padding:12px;border:none;border-radius:10px;background:rgba(255,255,255,.2);color:#fff;font-size:20px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.2)}.set-alarm-btn{padding:14px 30px;background:linear-gradient(to right,#ff4757,#ff3742);color:#fff;border:none;border-radius:10px;font-size:18px;cursor:pointer;transition:all .3s;box-shadow:0 5px 15px rgba(255,71,87,.4);flex-grow:1;margin-left:15px}.set-alarm-btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(255,71,87,.6)}.set-alarm-btn:active{transform:translateY(-1px)}.alarm-list{max-height:250px;overflow-y:auto;padding-right:5px}.alarm-list::-webkit-scrollbar{width:6px}.alarm-list::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:3px}.alarm-item{display:flex;justify-content:space-between;align-items:center;padding:15px;background:rgba(255,255,255,.1);margin-bottom:12px;border-radius:12px;transition:all .3s}.alarm-item:hover{background:rgba(255,255,255,.15);transform:translateX(5px)}.delete-alarm{background:rgba(255,255,255,.2);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .3s}.delete-alarm:hover{background:rgba(255,71,87,.7);transform:rotate(90deg)}.alarm-active{color:#ffdd59;font-weight:700}.alarm-time{font-size:22px;font-weight:700}.features{display:flex;justify-content:space-between;margin-top:20px}.feature-btn{padding:12px 20px;background:rgba(255,255,255,.15);border:none;border-radius:10px;color:#fff;font-size:16px;cursor:pointer;transition:all .3s;flex:1;margin:0 5px}.feature-btn:hover{background:rgba(255,255,255,.25);transform:translateY(-2px)}@media (max-width:480px){.analog-clock{width:220px;height:220px}.digital-clock{font-size:32px}.alarm-controls{flex-direction:column}.time-select{margin-bottom:15px;width:100%}.set-alarm-btn{margin-left:0;width:100%}.features{flex-direction:column}.feature-btn{margin:5px 0}}.alarm-ringing{animation:pulse 1s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,71,87,.7)}70%{box-shadow:0 0 0 20px rgba(255,71,87,0)}100%{box-shadow:0 0 0 0 rgba(255,71,87,0)}}.alarm-dialog{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:1000}.alarm-dialog-content{background:#fff;color:#333;padding:30px;border-radius:20px;text-align:center;max-width:400px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,.3)}.alarm-dialog h2{color:#ff4757;margin-bottom:15px;font-size:28px}.alarm-dialog p{font-size:18px;margin-bottom:25px;line-height:1.5}.alarm-dialog-buttons{display:flex;justify-content:center;gap:15px}.alarm-dialog-btn{padding:12px 25px;border:none;border-radius:10px;font-size:16px;cursor:pointer;transition:all .3s}.snooze-btn{background:#3498db;color:#fff}.stop-btn{background:#ff4757;color:#fff}.alarm-dialog-btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(0,0,0,.2)}.about-dialog{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:1000}.about-dialog-content{background:#fff;color:#333;padding:30px;border-radius:20px;text-align:center;max-width:400px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,.3);max-height:80vh;overflow-y:auto}.about-dialog h2{color:#1a2a6c;margin-bottom:20px;font-size:28px}.about-info{text-align:left;margin-bottom:20px;line-height:1.6}.about-info p{margin-bottom:10px}.update-log{text-align:left;margin-top:20px}.update-log-header{background:#f0f0f0;padding:10px 15px;border-radius:8px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.update-log-content{background:#f8f8f8;padding:15px;border-radius:8px;display:none}.update-log-content.show{display:block}</style></head><body><div class="container"><h1></h1><div class="clock-container"><div class="analog-clock"><div class="clock-center"></div><div class="hour-hand"></div><div class="minute-hand"></div><div class="second-hand"></div><div class="clock-numbers"></div></div><div class="digital-clock">00:00:00</div><div class="date-display">2023年1月1日 星期一</div></div><div class="alarm-section"><h2 class="alarm-title">闹钟设置</h2><div class="alarm-controls"><select id="hour-select" class="time-select"></select> <span style="font-size:28px;margin:0 10px">:</span> <select id="minute-select" class="time-select"></select> <button id="set-alarm" class="set-alarm-btn">设置闹钟</button></div><div class="alarm-list" id="alarm-list"></div><div class="features"><button id="test-alarm" class="feature-btn">测试闹钟</button> <button id="vibration-toggle" class="feature-btn">振动:开启</button> <button id="snooze-btn" class="feature-btn">贪睡(5分钟)</button> <button id="about-btn" class="feature-btn">关于</button></div></div></div><script>// 初始化时钟数字
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晨曦时钟</title>
+    <link rel="icon" href="/assets/img/favicons/favicon-96x96.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .analog-clock {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            margin-bottom: 25px;
+            border: 12px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                inset 0 0 25px rgba(0, 0, 0, 0.1),
+                0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .clock-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            background: #ff4757;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(255, 71, 87, 0.7);
+        }
+        
+        .hour-hand, .minute-hand, .second-hand {
+            position: absolute;
+            transform-origin: bottom center;
+            border-radius: 10px;
+            transition: transform 0.2s cubic-bezier(0.4, 2.3, 0.8, 1);
+        }
+        
+        .hour-hand {
+            width: 8px;
+            height: 70px;
+            background: white;
+            top: calc(50% - 70px);
+            left: calc(50% - 4px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .minute-hand {
+            width: 6px;
+            height: 100px;
+            background: white;
+            top: calc(50% - 100px);
+            left: calc(50% - 3px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .second-hand {
+            width: 2px;
+            height: 110px;
+            background: #ff4757;
+            top: calc(50% - 110px);
+            left: calc(50% - 1px);
+            box-shadow: 0 0 5px rgba(255, 71, 87, 0.7);
+        }
+        
+        .clock-numbers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .number {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            font-size: 20px;
+            transform-origin: center;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .digital-clock {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 25px;
+            border-radius: 15px;
+            letter-spacing: 3px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .date-display {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            opacity: 0.9;
+        }
+        
+        .alarm-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: none;
+        }
+        
+        .alarm-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .alarm-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .time-select {
+            width: 80px;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .set-alarm-btn {
+            padding: 14px 30px;
+            background: linear-gradient(to right, #ff4757, #ff3742);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+        
+        .set-alarm-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.6);
+        }
+        
+        .set-alarm-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .alarm-list {
+            max-height: 250px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        .alarm-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .alarm-list::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+        
+        .alarm-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 12px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .alarm-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+        
+        .delete-alarm {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .delete-alarm:hover {
+            background: rgba(255, 71, 87, 0.7);
+            transform: rotate(90deg);
+        }
+        
+        .alarm-active {
+            color: #ffdd59;
+            font-weight: bold;
+        }
+        
+        .alarm-time {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .feature-btn {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        .feature-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 480px) {
+            .analog-clock {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .digital-clock {
+                font-size: 32px;
+            }
+            
+            .alarm-controls {
+                flex-direction: column;
+            }
+            
+            .time-select {
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            
+            .set-alarm-btn {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature-btn {
+                margin: 5px 0;
+            }
+        }
+        
+        /* 闹钟响铃时的样式 */
+        .alarm-ringing {
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 71, 87, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
+        }
+        
+        /* 闹钟提醒对话框样式 */
+        .alarm-dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .alarm-dialog-content {
+            background: white;
+            color: #333;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .alarm-dialog h2 {
+            color: #ff4757;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+        
+        .alarm-dialog p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        
+        .alarm-dialog-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .alarm-dialog-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .snooze-btn {
+            background: #3498db;
+            color: white;
+        }
+        
+        .stop-btn {
+            background: #ff4757;
+            color: white;
+        }
+        
+        .alarm-dialog-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+		
+		/* 关于对话框样式 */
+		.about-dialog {
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: rgba(0, 0, 0, 0.8);
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    z-index: 1000;
+		}
+		
+		.about-dialog-content {
+		    background: white;
+		    color: #333;
+		    padding: 30px;
+		    border-radius: 20px;
+		    text-align: center;
+		    max-width: 400px;
+		    width: 90%;
+		    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+		    max-height: 80vh;
+		    overflow-y: auto;
+		}
+		
+		.about-dialog h2 {
+		    color: #1a2a6c;
+		    margin-bottom: 20px;
+		    font-size: 28px;
+		}
+		
+		.about-info {
+		    text-align: left;
+		    margin-bottom: 20px;
+		    line-height: 1.6;
+		}
+		
+		.about-info p {
+		    margin-bottom: 10px;
+		}
+		
+		.update-log {
+		    text-align: left;
+		    margin-top: 20px;
+		}
+		
+		.update-log-header {
+		    background: #f0f0f0;
+		    padding: 10px 15px;
+		    border-radius: 8px;
+		    cursor: pointer;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    margin-bottom: 10px;
+		}
+		
+		.update-log-content {
+		    background: #f8f8f8;
+		    padding: 15px;
+		    border-radius: 8px;
+		    display: none;
+		}
+		
+		.update-log-content.show {
+		    display: block;
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>    </h1>
+        
+        <div class="clock-container">
+            <div class="analog-clock">
+                <div class="clock-center"></div>
+                <div class="hour-hand"></div>
+                <div class="minute-hand"></div>
+                <div class="second-hand"></div>
+                <div class="clock-numbers">
+                    <!-- 时钟数字将通过JS动态生成 -->
+                </div>
+            </div>
+            
+            <div class="digital-clock">00:00:00</div>
+            <div class="date-display">2023年1月1日 星期一</div>
+        </div>
+        
+        <div class="alarm-section">
+            <h2 class="alarm-title">闹钟设置</h2>
+            
+            <div class="alarm-controls">
+                <select id="hour-select" class="time-select">
+                    <!-- 小时选项将通过JS动态生成 -->
+                </select>
+                <span style="font-size: 28px; margin: 0 10px;">:</span>
+                <select id="minute-select" class="time-select">
+                    <!-- 分钟选项将通过JS动态生成 -->
+                </select>
+                <button id="set-alarm" class="set-alarm-btn">设置闹钟</button>
+            </div>
+            
+            <div class="alarm-list" id="alarm-list">
+                <!-- 闹钟列表将通过JS动态生成 -->
+            </div>
+            
+            <div class="features">
+                <button id="test-alarm" class="feature-btn">测试闹钟</button>
+                <button id="vibration-toggle" class="feature-btn">振动:开启</button>
+                <button id="snooze-btn" class="feature-btn">贪睡(5分钟)</button>
+				<button id="about-btn" class="feature-btn">关于</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化时钟数字
         function initClockNumbers() {
             const clockNumbers = document.querySelector('.clock-numbers');
             for (let i = 1; i <= 12; i++) {
@@ -776,4 +1296,7 @@
 		            triggerAlarm(alarm);
 		        }
 		    });
-		}</script></body></html></div></div><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/smooth-scroll.min.js"></script><footer id="footer"><p></p><p><a href="/">© 2026 于兆海</a></p><p></p></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/common.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/css.escape.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5/dist/jquery.fancybox.min.js"></script><script>let LAZY_LOAD_IMAGE="[object Object]";$("body").find("fancybox").find("img").each((function(){var t=document.createElement("a");$(t).attr("data-fancybox","gallery"),$(t).attr("href",$(this).attr("src")),LAZY_LOAD_IMAGE&&$(t).attr("href",$(this).attr("data-original")),$(this).wrap(t)}))</script></body></html>
+		}
+    </script>
+</body>
+</html>

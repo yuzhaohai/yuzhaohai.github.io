@@ -1,1 +1,238 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="index,follow"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title></title><meta name="theme-color" content="#FFFFFF"><meta name="msapplication-TileColor" content="#1BC3FB"><meta name="msapplication-config" content="/favicon/browserconfig.xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="mask-icon" color="#1E5AA8" href="/favicon/favicon.svg"><link rel="manifest" href="/favicon/site.webmanifest"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/page.css"><meta name="generator" content="Hexo 6.3.0"></head><body class="docs"><div id="mobile-bar"><a class="menu-button fas fa-bars"></a><h2 class="nav-title"></h2></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script><script>Vue.config.productionTip=!1,window.PAGE_TYPE="resume"</script><div id="main" class="fix-sidebar"><div class="sidebar"><div class="sidebar-inner"><header class="header"><h2></h2><div class="meta"></div><hr><br></header><div class="list"><ul class="menu-root"><li><a href="/index.html" class="sidebar-link current"></a></li><li><a href="/en/index.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock-2.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/json-tree.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/shudu.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/snake.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/sudoku.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock.html" class="sidebar-link current"></a></li></ul></div></div></div><div class="content with-sidebar"><div class="resume-header"><h1 class="resume-title"></h1></div><!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JSON 树视图</title><link rel="icon" href="/assets/img/favicons/favicon-96x96.png"><style>:root{--bg:#f5f7fb;--panel:#fff;--border:#e3e8ef;--border-strong:#cfd6e0;--text:#1f2937;--text-2:#4b5563;--text-3:#9ca3af;--primary:#2563eb;--primary-soft:#eff4ff;--green:#16a34a;--red:#dc2626;--amber:#d97706;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}*{box-sizing:border-box;margin:0;padding:0}body,html{height:100%}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;display:flex;flex-direction:column;min-height:100vh}.topbar{background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.brand{display:flex;align-items:center;gap:10px}.brand-logo{width:32px;height:32px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}.brand h1{font-size:16px;font-weight:600}.brand .sub{font-size:12px;color:var(--text-3);margin-top:1px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid var(--border-strong);background:#fff;border-radius:6px;cursor:pointer;font-size:13px;color:var(--text);transition:all .15s}.btn:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-soft)}.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.btn.primary:hover{background:#1d4ed8}.btn.danger{color:var(--red);border-color:#fecaca}.btn.danger:hover{background:#fef2f2;border-color:var(--red)}.main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:0;padding:20px;max-width:1400px;width:100%;margin:0 auto}.pane{background:var(--panel);border:1px solid var(--border);border-radius:10px;display:flex;flex-direction:column;min-height:calc(100vh - 110px);overflow:hidden}.pane:first-child{border-right:none;border-radius:10px 0 0 10px}.pane:last-child{border-radius:0 10px 10px 0}.pane-label{padding:10px 16px;font-size:12px;color:var(--text-3);border-bottom:1px solid var(--border);background:#fafbfc;display:flex;justify-content:space-between;align-items:center}textarea{flex:1;border:none;outline:0;padding:16px;font-family:var(--mono);font-size:13px;line-height:1.6;resize:vertical;background:#fff;color:var(--text);tab-size:2}.tree{flex:1;overflow:auto;padding:14px 16px;font-family:var(--mono);font-size:13px;line-height:1.7;background:#fff}.tree .node{padding:1px 0}.tree .children{padding-left:22px;border-left:1px dashed #e5e7eb;margin-left:7px}.tree .toggle{cursor:pointer;display:inline-block;width:16px;color:var(--text-3);user-select:none;text-align:center}.tree .toggle:hover{color:var(--primary)}.tree .k{color:var(--primary);font-weight:600}.tree .s{color:var(--green)}.tree .n{color:var(--amber)}.tree .b{color:#db2777}.tree .u{color:var(--text-3);font-style:italic}.tree .meta{color:var(--text-3);font-size:11px;margin-left:6px;font-style:normal}.tree .empty{color:var(--text-3);font-style:normal;font-family:inherit}.tree .err{color:var(--red)}.status{padding:8px 16px;font-size:12px;border-top:1px solid var(--border);background:#fafbfc;color:var(--text-2)}.status.ok{color:var(--green)}.status.err{color:var(--red);background:#fef2f2}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99}.toast.show{opacity:1}@media (max-width:900px){.main{grid-template-columns:1fr;padding:12px}.pane{min-height:50vh}.pane:first-child{border-right:none;border-radius:10px 10px 0 0;border-bottom:none}.pane:last-child{border-radius:0 0 10px 10px}textarea{font-size:16px}}</style></head><body><div class="topbar"><div class="brand"><div class="brand-logo">树</div><div><h1>JSON 树视图</h1><div class="sub">粘贴 JSON，以可折叠树形结构浏览</div></div></div><div class="toolbar"><button class="btn primary" id="btnGen">生成树视图</button> <button class="btn" id="btnExpand">全部展开</button> <button class="btn" id="btnCollapse">全部折叠</button> <button class="btn" id="btnSample">填入示例</button> <button class="btn danger" id="btnClear">清空</button></div></div><div class="main"><div class="pane"><div class="pane-label">输入 JSON</div><textarea id="in" placeholder="在此粘贴 JSON，例如：{&quot;name&quot;:&quot;Tom&quot;,&quot;age&quot;:18,&quot;hobbies&quot;:[&quot;读书&quot;,&quot;跑步&quot;]}"></textarea><div class="status" id="status">就绪</div></div><div class="pane"><div class="pane-label">树形视图</div><div class="tree" id="out"><div class="empty">— 树视图将显示在这里 —</div></div></div></div><div class="toast" id="toast"></div><script>const $=e=>document.querySelector(e),status=$("#status");function toast(e){const t=$("#toast");t.textContent=e,t.classList.add("show"),clearTimeout(t._timer),t._timer=setTimeout(()=>t.classList.remove("show"),1500)}function escapeHtml(e){return String(e).replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[e]))}function setStatus(e,t){status.className="status "+(e||""),status.textContent=t}function render(){const e=$("#in").value.trim(),t=$("#out");if(!e)return t.innerHTML='<div class="empty">— 树视图将显示在这里 —</div>',void setStatus("","就绪");let n;try{n=JSON.parse(e)}catch(e){return t.innerHTML='<div class="err">语法错误：'+escapeHtml(e.message)+"</div>",void setStatus("err","语法错误："+e.message)}t.innerHTML="",t.appendChild(buildNode(n,"root"));setStatus("ok","解析成功 · "+countNodes(n)+" 个节点")}function countNodes(e){let t=1;return Array.isArray(e)?e.forEach(e=>t+=countNodes(e)):null!==e&&"object"==typeof e&&Object.keys(e).forEach(n=>t+=countNodes(e[n])),t}function buildNode(e,t){const n=document.createElement("div");if(n.className="node",null===e)return n.innerHTML='<span class="toggle">·</span><span class="k">'+escapeHtml(t)+'</span>: <span class="u">null</span>',n;if(Array.isArray(e)){const s=document.createElement("div");s.innerHTML='<span class="toggle">▼</span><span class="k">'+escapeHtml(t)+'</span> <span class="meta">Array('+e.length+")</span>";const a=document.createElement("div");return a.className="children",e.forEach((e,t)=>a.appendChild(buildNode(e,"["+t+"]"))),s.querySelector(".toggle").onclick=()=>toggle(a,s),n.appendChild(s),n.appendChild(a),n}if("object"==typeof e){const s=Object.keys(e),a=document.createElement("div");a.innerHTML='<span class="toggle">▼</span><span class="k">'+escapeHtml(t)+'</span> <span class="meta">{'+s.length+"}</span>";const l=document.createElement("div");return l.className="children",s.forEach(t=>l.appendChild(buildNode(e[t],t))),a.querySelector(".toggle").onclick=()=>toggle(l,a),n.appendChild(a),n.appendChild(l),n}let s="s",a=escapeHtml(String(e));"number"==typeof e?s="n":"boolean"==typeof e&&(s="b");const l="string"==typeof e?'"'+a+'"':a;return n.innerHTML='<span class="toggle">·</span><span class="k">'+escapeHtml(t)+'</span>: <span class="'+s+'">'+l+"</span>",n}function toggle(e,t){const n="none"!==e.style.display;e.style.display=n?"none":"",t.querySelector(".toggle").textContent=n?"▶":"▼"}$("#btnGen").onclick=render,$("#btnExpand").onclick=()=>{document.querySelectorAll("#out .children").forEach(e=>e.style.display=""),document.querySelectorAll("#out .toggle").forEach(e=>{"·"!==e.textContent.trim()&&(e.textContent="▼")})},$("#btnCollapse").onclick=()=>{document.querySelectorAll("#out .children").forEach(e=>e.style.display="none"),document.querySelectorAll("#out .toggle").forEach(e=>{"·"!==e.textContent.trim()&&(e.textContent="▶")})},$("#btnSample").onclick=()=>{$("#in").value=JSON.stringify({user:{id:1,name:"张三",email:"zhangsan@example.com",vip:!0,age:28},address:{city:"上海",zip:"200000",geo:{lat:31.23,lng:121.47}},roles:["admin","developer"],tags:[{type:"level",value:"senior"},{type:"team",value:"platform"}],active:!0,lastLogin:null},null,2),render()},$("#btnClear").onclick=()=>{$("#in").value="",$("#out").innerHTML='<div class="empty">— 树视图将显示在这里 —</div>',setStatus("","已清空")},$("#in").addEventListener("keydown",e=>{(e.ctrlKey||e.metaKey)&&"Enter"===e.key&&render()})</script></body></html></div></div><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/smooth-scroll.min.js"></script><footer id="footer"><p></p><p><a href="/">© 2026 于兆海</a></p><p></p></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/common.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/css.escape.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5/dist/jquery.fancybox.min.js"></script><script>let LAZY_LOAD_IMAGE="[object Object]";$("body").find("fancybox").find("img").each((function(){var t=document.createElement("a");$(t).attr("data-fancybox","gallery"),$(t).attr("href",$(this).attr("src")),LAZY_LOAD_IMAGE&&$(t).attr("href",$(this).attr("data-original")),$(this).wrap(t)}))</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JSON 树视图</title>
+<link rel="icon" href="/assets/img/favicons/favicon-96x96.png">
+<style>
+:root{
+  --bg:#f5f7fb; --panel:#fff; --border:#e3e8ef; --border-strong:#cfd6e0;
+  --text:#1f2937; --text-2:#4b5563; --text-3:#9ca3af;
+  --primary:#2563eb; --primary-soft:#eff4ff;
+  --green:#16a34a; --red:#dc2626; --amber:#d97706;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;display:flex;flex-direction:column;min-height:100vh}
+
+.topbar{background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{width:32px;height:32px;border-radius:8px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.brand h1{font-size:16px;font-weight:600}
+.brand .sub{font-size:12px;color:var(--text-3);margin-top:1px}
+
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid var(--border-strong);background:#fff;border-radius:6px;cursor:pointer;font-size:13px;color:var(--text);transition:all .15s}
+.btn:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-soft)}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.primary:hover{background:#1d4ed8}
+.btn.danger{color:var(--red);border-color:#fecaca}
+.btn.danger:hover{background:#fef2f2;border-color:var(--red)}
+
+.main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:0;padding:20px;max-width:1400px;width:100%;margin:0 auto}
+.pane{background:var(--panel);border:1px solid var(--border);border-radius:10px;display:flex;flex-direction:column;min-height:calc(100vh - 110px);overflow:hidden}
+.pane:first-child{border-right:none;border-radius:10px 0 0 10px}
+.pane:last-child{border-radius:0 10px 10px 0}
+.pane-label{padding:10px 16px;font-size:12px;color:var(--text-3);border-bottom:1px solid var(--border);background:#fafbfc;display:flex;justify-content:space-between;align-items:center}
+textarea{flex:1;border:none;outline:none;padding:16px;font-family:var(--mono);font-size:13px;line-height:1.6;resize:vertical;background:#fff;color:var(--text);tab-size:2}
+
+/* tree view */
+.tree{flex:1;overflow:auto;padding:14px 16px;font-family:var(--mono);font-size:13px;line-height:1.7;background:#fff}
+.tree .node{padding:1px 0}
+.tree .children{padding-left:22px;border-left:1px dashed #e5e7eb;margin-left:7px}
+.tree .toggle{cursor:pointer;display:inline-block;width:16px;color:var(--text-3);user-select:none;text-align:center}
+.tree .toggle:hover{color:var(--primary)}
+.tree .k{color:var(--primary);font-weight:600}
+.tree .s{color:var(--green)}
+.tree .n{color:var(--amber)}
+.tree .b{color:#db2777}
+.tree .u{color:var(--text-3);font-style:italic}
+.tree .meta{color:var(--text-3);font-size:11px;margin-left:6px;font-style:normal}
+.tree .empty{color:var(--text-3);font-style:normal;font-family:inherit}
+.tree .err{color:var(--red)}
+
+.status{padding:8px 16px;font-size:12px;border-top:1px solid var(--border);background:#fafbfc;color:var(--text-2)}
+.status.ok{color:var(--green)}
+.status.err{color:var(--red);background:#fef2f2}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99}
+.toast.show{opacity:1}
+
+@media (max-width:900px){
+  .main{grid-template-columns:1fr;padding:12px}
+  .pane{min-height:50vh}
+  .pane:first-child{border-right:none;border-radius:10px 10px 0 0;border-bottom:none}
+  .pane:last-child{border-radius:0 0 10px 10px}
+  textarea{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-logo">树</div>
+    <div>
+      <h1>JSON 树视图</h1>
+      <div class="sub">粘贴 JSON，以可折叠树形结构浏览</div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <button class="btn primary" id="btnGen">生成树视图</button>
+    <button class="btn" id="btnExpand">全部展开</button>
+    <button class="btn" id="btnCollapse">全部折叠</button>
+    <button class="btn" id="btnSample">填入示例</button>
+    <button class="btn danger" id="btnClear">清空</button>
+  </div>
+</div>
+
+<div class="main">
+  <div class="pane">
+    <div class="pane-label">输入 JSON</div>
+    <textarea id="in" placeholder='在此粘贴 JSON，例如：{&quot;name&quot;:&quot;Tom&quot;,&quot;age&quot;:18,&quot;hobbies&quot;:[&quot;读书&quot;,&quot;跑步&quot;]}'></textarea>
+    <div class="status" id="status">就绪</div>
+  </div>
+  <div class="pane">
+    <div class="pane-label">树形视图</div>
+    <div class="tree" id="out"><div class="empty">— 树视图将显示在这里 —</div></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const status = $('#status');
+
+function toast(msg){
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>t.classList.remove('show'), 1500);
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function setStatus(type, msg){
+  status.className = 'status ' + (type || '');
+  status.textContent = msg;
+}
+
+function render(){
+  const text = $('#in').value.trim();
+  const out = $('#out');
+  if(!text){
+    out.innerHTML = '<div class="empty">— 树视图将显示在这里 —</div>';
+    setStatus('', '就绪');
+    return;
+  }
+  let data;
+  try { data = JSON.parse(text); }
+  catch(e){
+    out.innerHTML = '<div class="err">语法错误：' + escapeHtml(e.message) + '</div>';
+    setStatus('err', '语法错误：' + e.message);
+    return;
+  }
+  out.innerHTML = '';
+  out.appendChild(buildNode(data, 'root'));
+  const nodeCount = countNodes(data);
+  setStatus('ok', '解析成功 · ' + nodeCount + ' 个节点');
+}
+
+function countNodes(v){
+  let n = 1;
+  if(Array.isArray(v)){ v.forEach(x => n += countNodes(x)); }
+  else if(v !== null && typeof v === 'object'){
+    Object.keys(v).forEach(k => n += countNodes(v[k]));
+  }
+  return n;
+}
+
+function buildNode(val, key){
+  const wrap = document.createElement('div');
+  wrap.className = 'node';
+
+  // null
+  if(val === null){
+    wrap.innerHTML = '<span class="toggle">·</span><span class="k">' + escapeHtml(key) + '</span>: <span class="u">null</span>';
+    return wrap;
+  }
+  // array
+  if(Array.isArray(val)){
+    const header = document.createElement('div');
+    header.innerHTML = '<span class="toggle">▼</span><span class="k">' + escapeHtml(key) + '</span> <span class="meta">Array(' + val.length + ')</span>';
+    const children = document.createElement('div');
+    children.className = 'children';
+    val.forEach((v,i) => children.appendChild(buildNode(v, '[' + i + ']')));
+    header.querySelector('.toggle').onclick = ()=>toggle(children, header);
+    wrap.appendChild(header);
+    wrap.appendChild(children);
+    return wrap;
+  }
+  // object
+  if(typeof val === 'object'){
+    const keys = Object.keys(val);
+    const header = document.createElement('div');
+    header.innerHTML = '<span class="toggle">▼</span><span class="k">' + escapeHtml(key) + '</span> <span class="meta">{' + keys.length + '}</span>';
+    const children = document.createElement('div');
+    children.className = 'children';
+    keys.forEach(k => children.appendChild(buildNode(val[k], k)));
+    header.querySelector('.toggle').onclick = ()=>toggle(children, header);
+    wrap.appendChild(header);
+    wrap.appendChild(children);
+    return wrap;
+  }
+  // primitive
+  let cls = 's', disp = escapeHtml(String(val));
+  if(typeof val === 'number') cls = 'n';
+  else if(typeof val === 'boolean') cls = 'b';
+  const text = typeof val === 'string' ? '"' + disp + '"' : disp;
+  wrap.innerHTML = '<span class="toggle">·</span><span class="k">' + escapeHtml(key) + '</span>: <span class="' + cls + '">' + text + '</span>';
+  return wrap;
+}
+
+function toggle(children, header){
+  const open = children.style.display !== 'none';
+  children.style.display = open ? 'none' : '';
+  header.querySelector('.toggle').textContent = open ? '▶' : '▼';
+}
+
+$('#btnGen').onclick = render;
+$('#btnExpand').onclick = ()=>{
+  document.querySelectorAll('#out .children').forEach(c => c.style.display = '');
+  document.querySelectorAll('#out .toggle').forEach(t => { if(t.textContent.trim() !== '·') t.textContent = '▼'; });
+};
+$('#btnCollapse').onclick = ()=>{
+  document.querySelectorAll('#out .children').forEach(c => c.style.display = 'none');
+  document.querySelectorAll('#out .toggle').forEach(t => { if(t.textContent.trim() !== '·') t.textContent = '▶'; });
+};
+$('#btnSample').onclick = ()=>{
+  $('#in').value = JSON.stringify({
+    user:{id:1, name:"张三", email:"zhangsan@example.com", vip:true, age:28},
+    address:{city:"上海", zip:"200000", geo:{lat:31.23, lng:121.47}},
+    roles:["admin","developer"],
+    tags:[
+      {type:"level", value:"senior"},
+      {type:"team", value:"platform"}
+    ],
+    active:true, lastLogin:null
+  }, null, 2);
+  render();
+};
+$('#btnClear').onclick = ()=>{
+  $('#in').value = '';
+  $('#out').innerHTML = '<div class="empty">— 树视图将显示在这里 —</div>';
+  setStatus('', '已清空');
+};
+
+// Ctrl+Enter 快捷生成
+$('#in').addEventListener('keydown', e => {
+  if((e.ctrlKey || e.metaKey) && e.key === 'Enter') render();
+});
+</script>
+</body>
+</html>

@@ -1,4 +1,76 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="robots" content="index,follow"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta name="HandheldFriendly" content="True"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title></title><meta name="theme-color" content="#FFFFFF"><meta name="msapplication-TileColor" content="#1BC3FB"><meta name="msapplication-config" content="/favicon/browserconfig.xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="mask-icon" color="#1E5AA8" href="/favicon/favicon.svg"><link rel="manifest" href="/favicon/site.webmanifest"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/page.css"><meta name="generator" content="Hexo 6.3.0"></head><body class="docs"><div id="mobile-bar"><a class="menu-button fas fa-bars"></a><h2 class="nav-title"></h2></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script><script>Vue.config.productionTip=!1,window.PAGE_TYPE="resume"</script><div id="main" class="fix-sidebar"><div class="sidebar"><div class="sidebar-inner"><header class="header"><h2></h2><div class="meta"></div><hr><br></header><div class="list"><ul class="menu-root"><li><a href="/index.html" class="sidebar-link current"></a></li><li><a href="/en/index.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock-2.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/json-tree.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/shudu.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/snake.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/sudoku.html" class="sidebar-link current"></a></li><li><a href="/static/awesome/clock.html" class="sidebar-link current"></a></li></ul></div></div></div><div class="content with-sidebar"><div class="resume-header"><h1 class="resume-title"></h1></div><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>复古像素风贪吃蛇</title><link rel="icon" href="/assets/img/favicons/favicon-96x96.png"><script src="https://cdn.tailwindcss.com"></script><link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"><script>tailwind.config={theme:{extend:{colors:{primary:"#0EFF37",secondary:"#37383C",accent:"#0EFF37",danger:"#ff4d4f",success:"#52c41a",dark:"#121212",light:"#f0f2f5",snakeRed:"#ff5252",snakeOrange:"#ff9800",snakeYellow:"#ffeb3b",snakeGreen:"#4caf50",snakeBlue:"#2196f3",snakePurple:"#9c27b0",food1:"#4caf50",food2:"#4caf50"},fontFamily:{pixel:["Doto","monospace","system-ui"]},animation:{"pulse-slow":"pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",glow:"glow 2s ease-in-out infinite alternate",blink:"blink 1s step-end infinite","score-pop":"score-pop 0.5s ease-out",explode:"explode 0.5s ease-out forwards"},keyframes:{glow:{"0%":{textShadow:"0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffeb3b, 0 0 20px #ffeb3b"},"100%":{textShadow:"0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9800, 0 0 40px #ff9800"}},blink:{"0%, 100%":{opacity:"1"},"50%":{opacity:"0.5"}},"score-pop":{"0%":{transform:"scale(1)",opacity:"1"},"50%":{transform:"scale(1.2)",opacity:"0.8"},"100%":{transform:"scale(1)",opacity:"1"}},explode:{"0%":{transform:"scale(1)",opacity:"1"},"100%":{transform:"scale(2)",opacity:"0"}}},boxShadow:{pixel:"4px 4px 0px rgba(69, 101, 75, 1)","pixel-hover":"6px 6px 0px rgba(69, 101, 75, 1)"}}}}</script><style type="text/tailwindcss">.h1 {
+<html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>复古像素风贪吃蛇</title>
+    <link rel="icon" href="/assets/img/favicons/favicon-96x96.png">
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EFF37',
+            secondary: '#37383C',
+            accent: '#0EFF37',
+            danger: '#ff4d4f',
+            success: '#52c41a',
+            dark: '#121212',
+            light: '#f0f2f5',
+            // 蛇身颜色 - 彩虹色
+            snakeRed: '#ff5252',
+            snakeOrange: '#ff9800',
+            snakeYellow: '#ffeb3b',
+            snakeGreen: '#4caf50',
+            snakeBlue: '#2196f3',
+            snakePurple: '#9c27b0',
+            // 食物颜色
+            food1: '#4caf50',
+            food2: '#4caf50',
+          },
+          fontFamily: {
+            pixel: ['Doto', 'monospace', 'system-ui'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'blink': 'blink 1s step-end infinite',
+            'score-pop': 'score-pop 0.5s ease-out',
+            'explode': 'explode 0.5s ease-out forwards',
+          },
+          keyframes: {
+            glow: {
+              '0%': { textShadow: '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffeb3b, 0 0 20px #ffeb3b' },
+              '100%': { textShadow: '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff9800, 0 0 40px #ff9800' },
+            },
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.5' },
+            },
+            'score-pop': {
+              '0%': { transform: 'scale(1)', opacity: '1' },
+              '50%': { transform: 'scale(1.2)', opacity: '0.8' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            explode: {
+              '0%': { transform: 'scale(1)', opacity: '1' },
+              '100%': { transform: 'scale(2)', opacity: '0' },
+            },
+          },
+          boxShadow: {
+            'pixel': '4px 4px 0px rgba(69, 101, 75, 1)',
+            'pixel-hover': '6px 6px 0px rgba(69, 101, 75, 1)',
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    .h1 {
       line-height:64px;
     }
     @layer utilities {
@@ -55,4 +127,812 @@
       .glass-effect {
         @apply bg-white bg-opacity-10 backdrop-blur-md;
       }
-    }</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-dark min-h-screen flex flex-col items-center justify-center p-4 text-light overflow-hidden"><div class="w-full max-w-3xl mx-auto flex flex-col items-center"><h1 class="pixel-text text-4xl md:text-5xl font-bold text-center mb-4 text-accent line-height:64px" style="line-height:64px">SNAKE GAME</h1><div id="game-container" class="relative overflow-hidden pixel-borders transition-all duration-300"><canvas id="gameCanvas" class="block bg-dark grid-pattern"></canvas><div id="score-container" class="absolute top-2 right-2 px-3 py-1 rounded glass-effect pixel-text text-xl">分数: <span id="score" class="text-accent" style="color:#0eff37;font-size:24px">0</span></div><div id="start-screen" class="absolute inset-0 flex flex-col items-center justify-center bg-dark bg-opacity-80 z-10"><button id="start-button" class="pixel-button" style="font-size:24px">START</button></div><div id="game-over-screen" class="absolute inset-0 flex flex-col items-center justify-center bg-dark bg-opacity-80 z-10 hidden"><h2 class="pixel-text text-4xl mb-4 text-primary animate-blink" style="font-weight:700">GAME OVER</h2><p class="pixel-text text-xl mb-2">最终得分: <span id="final-score" class="text-accent">0</span></p><button id="restart-button" class="pixel-button mt-6" style="font-size:24px">RESTART</button></div></div><div class="mt-6 px-4 py-3 glass-effect w-full pixel-text"><p class="text-center">使用 <span class="text-accent" style="color:#0eff37">方向键 ↑ ↓ ← →</span> 控制蛇的移动，按空格键暂停</p><p class="text-center mt-2">吃到食物得分，蛇身会变长</p></div><div id="mobile-controls" class="mt-6 grid grid-cols-3 gap-2 w-full max-w-xs hidden"><div class="col-start-2"><button id="up-button" class="w-full h-12 pixel-button flex items-center justify-center"><i class="fa fa-arrow-up"></i></button></div><div class="col-start-1"><button id="left-button" class="w-full h-12 pixel-button flex items-center justify-center"><i class="fa fa-arrow-left"></i></button></div><div class="col-start-2"><button id="down-button" class="w-full h-12 pixel-button flex items-center justify-center"><i class="fa fa-arrow-down"></i></button></div><div class="col-start-3"><button id="right-button" class="w-full h-12 pixel-button flex items-center justify-center"><i class="fa fa-arrow-right"></i></button></div></div></div><script>const config={gridSize:30,initialSpeed:150,speedIncrease:5,minSpeed:50,snakeColors:["#FF3E3E","#FF6F00","#D5FF3B","#46ED4D","#3FAAFF","#AC53FF"],foodColors:["#ffeb3b","#ff9800"],foodBlinkSpeed:500},gameState={snake:[],food:{},direction:"RIGHT",nextDirection:"RIGHT",score:0,speed:config.initialSpeed,gameLoop:null,isGameOver:!1,isPaused:!1,canvas:null,ctx:null,canvasWidth:0,canvasHeight:0,gridWidth:0,gridHeight:0,foodColorIndex:0,foodBlinkTimer:null,explosions:[],customFoodImage:null,defaultFoodImage:null},halftonePatterns=["","half-tone","half-tone-dense","half-tone-sparse"],elements={canvas:document.getElementById("gameCanvas"),scoreElement:document.getElementById("score"),finalScoreElement:document.getElementById("final-score"),startScreen:document.getElementById("start-screen"),gameOverScreen:document.getElementById("game-over-screen"),startButton:document.getElementById("start-button"),restartButton:document.getElementById("restart-button"),gameContainer:document.getElementById("game-container"),mobileControls:document.getElementById("mobile-controls")};function initGame(){setupCanvas(),checkMobileDevice(),addEventListeners(),resetGameState()}function setupCanvas(){gameState.canvas=elements.canvas,gameState.ctx=gameState.canvas.getContext("2d"),gameState.canvas.width=750,gameState.canvas.height=540,gameState.gridWidth=Math.floor(gameState.canvas.width/config.gridSize),gameState.gridHeight=Math.floor(gameState.canvas.height/config.gridSize)}function checkMobileDevice(){/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)&&elements.mobileControls.classList.remove("hidden")}function addEventListeners(){document.addEventListener("keydown",handleKeyDown),elements.startButton.addEventListener("click",startGame),elements.restartButton.addEventListener("click",restartGame),document.getElementById("up-button").addEventListener("click",()=>changeDirection("UP")),document.getElementById("down-button").addEventListener("click",()=>changeDirection("DOWN")),document.getElementById("left-button").addEventListener("click",()=>changeDirection("LEFT")),document.getElementById("right-button").addEventListener("click",()=>changeDirection("RIGHT")),document.getElementById("food-image-upload").addEventListener("change",handleFoodImageUpload),document.getElementById("reset-food-image").addEventListener("click",resetFoodImage),window.addEventListener("resize",()=>{gameState.gameLoop||(setupCanvas(),drawGame())})}function handleFoodImageUpload(e){const t=e.target.files[0];if(!t)return;if(!t.type.match("image.*"))return void showUploadStatus("请上传图片文件","error");const a=new FileReader;a.onload=function(e){const t=new Image;t.onload=function(){const e=document.createElement("canvas");e.width=config.gridSize,e.height=config.gridSize;const a=e.getContext("2d");a.clearRect(0,0,config.gridSize,config.gridSize);const o=Math.min(config.gridSize/t.width,config.gridSize/t.height),n=t.width*o,i=t.height*o;a.drawImage(t,(config.gridSize-n)/2,(config.gridSize-i)/2,n,i),gameState.customFoodImage=new Image,gameState.customFoodImage.src=e.toDataURL("image/png"),showUploadStatus("食物图片已更新！"),gameState.isGameOver||gameState.isPaused||drawGame()},t.onerror=function(){showUploadStatus("图片加载失败","error")},t.src=e.target.result},a.readAsDataURL(t)}function resetFoodImage(){gameState.customFoodImage=null,document.getElementById("food-image-upload").value="",showUploadStatus("已恢复默认食物图片"),gameState.isGameOver||gameState.isPaused||drawGame()}function showUploadStatus(e,t="success"){const a=document.getElementById("image-upload-status");a.textContent=e,a.className="error"===t?"text-xs text-center mt-2 text-danger":"text-xs text-center mt-2 text-success",a.classList.remove("hidden"),setTimeout(()=>{a.classList.add("hidden")},3e3)}function handleKeyDown(e){if(!gameState.isGameOver)switch(e.key){case"ArrowUp":changeDirection("UP");break;case"ArrowDown":changeDirection("DOWN");break;case"ArrowLeft":changeDirection("LEFT");break;case"ArrowRight":changeDirection("RIGHT");break;case" ":togglePause()}}function changeDirection(e){e!=={UP:"DOWN",DOWN:"UP",LEFT:"RIGHT",RIGHT:"LEFT"}[gameState.direction]&&(gameState.nextDirection=e)}function resetGameState(){const e=Math.floor(gameState.gridWidth/2),t=Math.floor(gameState.gridHeight/2);gameState.snake=[{x:e,y:t},{x:e-1,y:t},{x:e-2,y:t}],gameState.direction="RIGHT",gameState.nextDirection="RIGHT",gameState.score=0,gameState.speed=config.initialSpeed,generateFood(),gameState.isGameOver=!1,gameState.isPaused=!1,gameState.explosions=[],updateScore(),drawGame()}function generateFood(){let e;do{e={x:Math.floor(Math.random()*gameState.gridWidth),y:Math.floor(Math.random()*gameState.gridHeight)}}while(gameState.snake.some(t=>t.x===e.x&&t.y===e.y));gameState.food=e,gameState.foodColorIndex=0,gameState.foodBlinkTimer&&clearInterval(gameState.foodBlinkTimer),gameState.foodBlinkTimer=setInterval(()=>{gameState.foodColorIndex=(gameState.foodColorIndex+1)%config.foodColors.length,gameState.isGameOver||gameState.isPaused||drawGame()},config.foodBlinkSpeed)}function startGame(){elements.startScreen.classList.add("hidden"),resetGameState(),gameLoop()}function restartGame(){elements.gameOverScreen.classList.add("hidden"),resetGameState(),gameLoop()}function gameLoop(){gameState.isGameOver||gameState.isPaused||(updateGame(),drawGame(),gameState.gameLoop=setTimeout(gameLoop,gameState.speed))}function updateGame(){gameState.direction=gameState.nextDirection;const e={...gameState.snake[0]};switch(gameState.direction){case"UP":e.y-=1;break;case"DOWN":e.y+=1;break;case"LEFT":e.x-=1;break;case"RIGHT":e.x+=1}checkCollision(e)?endGame():(gameState.snake.unshift(e),e.x===gameState.food.x&&e.y===gameState.food.y?(gameState.score+=10,updateScore(),gameState.speed>config.minSpeed&&(gameState.speed-=config.speedIncrease),addExplosion(e.x,e.y),generateFood()):gameState.snake.pop(),updateExplosions())}function checkCollision(e){if(e.x<0||e.x>=gameState.gridWidth||e.y<0||e.y>=gameState.gridHeight)return!0;for(let t=1;t<gameState.snake.length;t++)if(e.x===gameState.snake[t].x&&e.y===gameState.snake[t].y)return!0;return!1}function addExplosion(e,t){const a={x:e,y:t,frame:0,maxFrames:12,pixelSize:config.gridSize/6,color:"#ffffff",pixels:[]},o=2+2*Math.floor(3*Math.random()),n=Math.floor(o/2);for(let e=-n;e<=n;e++)for(let t=-n;t<=n;t++)a.pixels.push({dx:t,dy:e,opacity:1,visible:Math.random()>.2});gameState.explosions.push(a)}function updateExplosions(){for(let e=gameState.explosions.length-1;e>=0;e--){const t=gameState.explosions[e];t.frame++,t.pixels.forEach(e=>{if(e.visible){Math.sqrt(e.dx*e.dx+e.dy*e.dy),Math.sqrt(2)}});const a=t.pixels.every(e=>!e.visible);(t.frame>=t.maxFrames||a)&&gameState.explosions.splice(e,1)}}function updateScore(){elements.scoreElement.textContent=gameState.score,elements.finalScoreElement.textContent=gameState.score,elements.scoreElement.classList.add("animate-score-pop"),setTimeout(()=>{elements.scoreElement.classList.remove("animate-score-pop")},500)}function togglePause(){gameState.isGameOver||(gameState.isPaused=!gameState.isPaused,gameState.isPaused||gameLoop())}function endGame(){gameState.isGameOver=!0,clearInterval(gameState.foodBlinkTimer),elements.gameOverScreen.classList.remove("hidden")}function drawGame(){const e=gameState.ctx,t=config.gridSize;e.clearRect(0,0,gameState.canvas.width,gameState.canvas.height),drawSnake(e,t),drawFood(e,t),drawExplosions(e,t),gameState.isPaused&&drawPauseScreen(e)}function drawSnake(e,t){const a=gameState.snake.length;gameState.snake.forEach((o,n)=>{const i=Math.floor((gameState.score/10+n/a)%config.snakeColors.length),s=config.snakeColors[i],r=halftonePatterns[n%halftonePatterns.length];if(e.fillStyle=s,e.fillRect(o.x*t,o.y*t,t,t),0===n&&(e.strokeStyle="rgba(255, 255, 255, 1)",e.lineWidth=2,e.strokeRect(o.x*t,o.y*t,t,t)),r){const a=document.createElement("canvas");a.width=t,a.height=t;const n=a.getContext("2d");"half-tone"===r?drawHalftonePattern(n,t,4,1):"half-tone-dense"===r?drawHalftonePattern(n,t,2,1):"half-tone-sparse"===r&&drawHalftonePattern(n,t,6,1);const i=e.createPattern(a,"repeat");e.fillStyle=i,e.fillRect(o.x*t,o.y*t,t,t)}})}function drawHalftonePattern(e,t,a,o){e.fillStyle=`rgba(0, 0, 0, ${o})`;for(let o=0;o<t;o+=a)for(let n=0;n<t;n+=a){const t=a/3;e.fillRect(n+a/2-t/2,o+a/2-t/2,t,t)}}function drawFood(e,t){const a=gameState.food;if(gameState.customFoodImage&&gameState.customFoodImage.complete)e.drawImage(gameState.customFoodImage,a.x*t,a.y*t,t,t);else{const o=new Image;if(o.src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/42ba020e55fd44dd98d8ddcfc882b6ec.png~tplv-a9rns2rl98-image-qvalue.image?rcl=2025091814571282B9F17558F2AE9C3BEC&rk3s=8e244e95&rrcfp=b669a9d6&x-expires=1758265032&x-signature=H1vJ%2F1cJOsieMUfYgZVTepHJVt0%3D",o.complete)e.drawImage(o,a.x*t,a.y*t,t,t);else{const o=config.foodColors[gameState.foodColorIndex];e.fillStyle=o,e.fillRect(a.x*t,a.y*t,t,t);const n=e.createLinearGradient(a.x*t,a.y*t,(a.x+1)*t,(a.y+1)*t);n.addColorStop(0,o),n.addColorStop(1,"rgba(255, 255, 255, 0.5)"),e.fillStyle=n,e.fillRect(a.x*t,a.y*t,t,t);const i=document.createElement("canvas");i.width=t,i.height=t;drawHalftonePattern(i.getContext("2d"),t,6,.2);const s=e.createPattern(i,"repeat");e.fillStyle=s,e.fillRect(a.x*t,a.y*t,t,t)}}}function drawExplosions(e,t){gameState.explosions.forEach(a=>{const o=(a.x+.5)*t,n=(a.y+.5)*t;a.pixels.forEach(t=>{if(t.visible&&t.opacity>0){e.save(),e.globalAlpha=t.opacity,e.fillStyle=a.color;const i=1+a.frame/a.maxFrames*2,s=o+t.dx*a.pixelSize*i,r=n+t.dy*a.pixelSize*i;e.fillRect(s-a.pixelSize/2,r-a.pixelSize/2,a.pixelSize,a.pixelSize),e.restore()}})})}function drawPauseScreen(e){e.fillStyle="rgba(0, 0, 0, 0.5)",e.fillRect(0,0,gameState.canvas.width,gameState.canvas.height),e.font="40px VT323, monospace",e.fillStyle="#ffeb3b",e.textAlign="center",e.textBaseline="middle",e.fillText("暂停",gameState.canvas.width/2,gameState.canvas.height/2),e.font="20px VT323, monospace",e.fillStyle="#ffffff",e.fillText("按空格键继续",gameState.canvas.width/2,gameState.canvas.height/2+50)}window.addEventListener("load",initGame)</script></body></html></div></div><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/smooth-scroll.min.js"></script><footer id="footer"><p></p><p><a href="/">© 2026 于兆海</a></p><p></p></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/common.js"></script><script src="https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/css.escape.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5/dist/jquery.fancybox.min.js"></script><script>let LAZY_LOAD_IMAGE="[object Object]";$("body").find("fancybox").find("img").each((function(){var t=document.createElement("a");$(t).attr("data-fancybox","gallery"),$(t).attr("href",$(this).attr("src")),LAZY_LOAD_IMAGE&&$(t).attr("href",$(this).attr("data-original")),$(this).wrap(t)}))</script></body></html>
+    }
+  </style>
+  
+  <!-- 引入像素字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark min-h-screen flex flex-col items-center justify-center p-4 text-light overflow-hidden">
+  <div class="w-full max-w-3xl mx-auto flex flex-col items-center">
+    <!-- 游戏标题 -->
+    <h1 class="pixel-text text-4xl md:text-5xl font-bold text-center mb-4 text-accent line-height:64px" style="line-height: 64px;">SNAKE GAME</h1>
+    
+    <!-- 游戏容器 -->
+    <div id="game-container" class="relative overflow-hidden pixel-borders transition-all duration-300">
+      <!-- 游戏画布 -->
+      <canvas id="gameCanvas" class="block bg-dark grid-pattern"></canvas>
+      
+      <!-- 分数显示 -->
+      <div id="score-container" class="absolute top-2 right-2 px-3 py-1 rounded glass-effect pixel-text text-xl">
+        分数: <span id="score" class="text-accent" style="color: rgb(14, 255, 55); font-size: 24px;">0</span>
+      </div>
+      
+      <!-- 游戏开始遮罩 -->
+      <div id="start-screen" class="absolute inset-0 flex flex-col items-center justify-center bg-dark bg-opacity-80 z-10">
+        <button id="start-button" class="pixel-button" style="font-size: 24px;">START</button>
+      </div>
+      
+      <!-- 游戏结束遮罩 -->
+      <div id="game-over-screen" class="absolute inset-0 flex flex-col items-center justify-center bg-dark bg-opacity-80 z-10 hidden">
+        <h2 class="pixel-text text-4xl mb-4 text-primary animate-blink" style="font-weight: bold;">GAME OVER</h2>
+        <p class="pixel-text text-xl mb-2">最终得分: <span id="final-score" class="text-accent">0</span></p>
+        <button id="restart-button" class="pixel-button mt-6" style="font-size: 24px;">RESTART</button>
+      </div>
+    </div>
+    
+    <!-- 操作说明 -->
+    <div class="mt-6 px-4 py-3 glass-effect w-full pixel-text">
+      <p class="text-center">使用 <span class="text-accent" style="color: rgb(14, 255, 55);">方向键 ↑ ↓ ← →</span> 控制蛇的移动，按空格键暂停</p>
+      <p class="text-center mt-2">吃到食物得分，蛇身会变长</p>
+    </div>
+    
+    <!-- 移动端控制按钮 -->
+    <div id="mobile-controls" class="mt-6 grid grid-cols-3 gap-2 w-full max-w-xs hidden">
+      <div class="col-start-2">
+        <button id="up-button" class="w-full h-12 pixel-button flex items-center justify-center">
+          <i class="fa fa-arrow-up"></i>
+        </button>
+      </div>
+      <div class="col-start-1">
+        <button id="left-button" class="w-full h-12 pixel-button flex items-center justify-center">
+          <i class="fa fa-arrow-left"></i>
+        </button>
+      </div>
+      <div class="col-start-2">
+        <button id="down-button" class="w-full h-12 pixel-button flex items-center justify-center">
+          <i class="fa fa-arrow-down"></i>
+        </button>
+      </div>
+      <div class="col-start-3">
+        <button id="right-button" class="w-full h-12 pixel-button flex items-center justify-center">
+          <i class="fa fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 游戏配置
+    const config = {
+      gridSize: 30, // 网格大小（像素）
+      initialSpeed: 150, // 初始速度（毫秒）
+      speedIncrease: 5, // 每吃一个食物速度增加量（毫秒）
+      minSpeed: 50, // 最小速度（毫秒）
+      snakeColors: [
+        '#FF3E3E', // 红色
+        '#FF6F00', // 橙色
+        '#D5FF3B', // 黄色
+        '#46ED4D', // 绿色
+        '#3FAAFF', // 蓝色
+        '#AC53FF'  // 紫色
+      ],
+      foodColors: [
+        '#ffeb3b', // 黄色
+        '#ff9800'  // 橙色
+      ],
+      foodBlinkSpeed: 500, // 食物闪烁速度（毫秒）
+    };
+    
+    // 游戏状态
+    const gameState = {
+      snake: [],
+      food: {},
+      direction: 'RIGHT',
+      nextDirection: 'RIGHT',
+      score: 0,
+      speed: config.initialSpeed,
+      gameLoop: null,
+      isGameOver: false,
+      isPaused: false,
+      canvas: null,
+      ctx: null,
+      canvasWidth: 0,
+      canvasHeight: 0,
+      gridWidth: 0,
+      gridHeight: 0,
+      foodColorIndex: 0,
+      foodBlinkTimer: null,
+      explosions: [],
+      customFoodImage: null, // 自定义食物图片
+      defaultFoodImage: null // 默认食物图片
+    };
+    
+    // 半调图案类型
+    const halftonePatterns = ['', 'half-tone', 'half-tone-dense', 'half-tone-sparse'];
+    
+    // DOM 元素
+    const elements = {
+      canvas: document.getElementById('gameCanvas'),
+      scoreElement: document.getElementById('score'),
+      finalScoreElement: document.getElementById('final-score'),
+      startScreen: document.getElementById('start-screen'),
+      gameOverScreen: document.getElementById('game-over-screen'),
+      startButton: document.getElementById('start-button'),
+      restartButton: document.getElementById('restart-button'),
+      gameContainer: document.getElementById('game-container'),
+      mobileControls: document.getElementById('mobile-controls')
+    };
+    
+    // 初始化游戏
+    function initGame() {
+      // 设置画布
+      setupCanvas();
+      
+      // 检查是否为移动设备
+      checkMobileDevice();
+      
+      // 添加事件监听器
+      addEventListeners();
+      
+      // 初始化游戏状态
+      resetGameState();
+    }
+    
+
+    
+    // 设置画布
+    function setupCanvas() {
+      gameState.canvas = elements.canvas;
+      gameState.ctx = gameState.canvas.getContext('2d');
+      
+      // 设置画布大小为750px x 540px（25x18格）
+      gameState.canvas.width = 750;
+      gameState.canvas.height = 540;
+      
+      // 计算网格数量（25x18）
+      gameState.gridWidth = Math.floor(gameState.canvas.width / config.gridSize);
+      gameState.gridHeight = Math.floor(gameState.canvas.height / config.gridSize);
+    }
+    
+    // 检查是否为移动设备
+    function checkMobileDevice() {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        elements.mobileControls.classList.remove('hidden');
+      }
+    }
+    
+    // 添加事件监听器
+    function addEventListeners() {
+      // 键盘控制
+      document.addEventListener('keydown', handleKeyDown);
+      
+      // 开始按钮
+      elements.startButton.addEventListener('click', startGame);
+      
+      // 重新开始按钮
+      elements.restartButton.addEventListener('click', restartGame);
+      
+      // 移动端控制按钮
+      document.getElementById('up-button').addEventListener('click', () => changeDirection('UP'));
+      document.getElementById('down-button').addEventListener('click', () => changeDirection('DOWN'));
+      document.getElementById('left-button').addEventListener('click', () => changeDirection('LEFT'));
+      document.getElementById('right-button').addEventListener('click', () => changeDirection('RIGHT'));
+      
+      // 食物图片上传
+      document.getElementById('food-image-upload').addEventListener('change', handleFoodImageUpload);
+      
+      // 恢复默认食物图片
+      document.getElementById('reset-food-image').addEventListener('click', resetFoodImage);
+      
+      // 窗口大小改变时重新设置画布
+      // 窗口大小改变时重新设置画布（保持750x540大小）
+      window.addEventListener('resize', () => {
+        if (!gameState.gameLoop) { // 只有在游戏未运行时才调整
+          setupCanvas();
+          drawGame();
+        }
+      });
+    }
+    
+    // 处理食物图片上传
+    function handleFoodImageUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      
+      // 检查文件类型
+      if (!file.type.match('image.*')) {
+        showUploadStatus('请上传图片文件', 'error');
+        return;
+      }
+      
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        const img = new Image();
+        
+        img.onload = function() {
+          // 创建30x30的画布
+          const canvas = document.createElement('canvas');
+          canvas.width = config.gridSize;
+          canvas.height = config.gridSize;
+          const ctx = canvas.getContext('2d');
+          
+          // 清除画布
+          ctx.clearRect(0, 0, config.gridSize, config.gridSize);
+          
+          // 计算缩放比例，保持图片比例
+          const scale = Math.min(config.gridSize / img.width, config.gridSize / img.height);
+          const width = img.width * scale;
+          const height = img.height * scale;
+          
+          // 绘制图片，居中显示
+          ctx.drawImage(
+            img, 
+            (config.gridSize - width) / 2, 
+            (config.gridSize - height) / 2, 
+            width, 
+            height
+          );
+          
+          // 保存为30x30的图片
+          gameState.customFoodImage = new Image();
+          gameState.customFoodImage.src = canvas.toDataURL('image/png');
+          
+          showUploadStatus('食物图片已更新！');
+          
+          // 重绘游戏
+          if (!gameState.isGameOver && !gameState.isPaused) {
+            drawGame();
+          }
+        };
+        
+        img.onerror = function() {
+          showUploadStatus('图片加载失败', 'error');
+        };
+        
+        img.src = e.target.result;
+      };
+      
+      reader.readAsDataURL(file);
+    }
+    
+    // 恢复默认食物图片
+    function resetFoodImage() {
+      gameState.customFoodImage = null;
+      document.getElementById('food-image-upload').value = '';
+      showUploadStatus('已恢复默认食物图片');
+      
+      // 重绘游戏
+      if (!gameState.isGameOver && !gameState.isPaused) {
+        drawGame();
+      }
+    }
+    
+    // 显示上传状态
+    function showUploadStatus(message, type = 'success') {
+      const statusElement = document.getElementById('image-upload-status');
+      statusElement.textContent = message;
+      statusElement.className = type === 'error' ? 'text-xs text-center mt-2 text-danger' : 'text-xs text-center mt-2 text-success';
+      statusElement.classList.remove('hidden');
+      
+      // 3秒后隐藏状态消息
+      setTimeout(() => {
+        statusElement.classList.add('hidden');
+      }, 3000);
+    }
+    
+    // 处理键盘事件
+    function handleKeyDown(event) {
+      if (gameState.isGameOver) return;
+      
+      switch (event.key) {
+        case 'ArrowUp':
+          changeDirection('UP');
+          break;
+        case 'ArrowDown':
+          changeDirection('DOWN');
+          break;
+        case 'ArrowLeft':
+          changeDirection('LEFT');
+          break;
+        case 'ArrowRight':
+          changeDirection('RIGHT');
+          break;
+        case ' ': // 空格键暂停/继续
+          togglePause();
+          break;
+      }
+    }
+    
+    // 改变方向
+    function changeDirection(newDirection) {
+      // 防止蛇直接掉头
+      const oppositeDirections = {
+        'UP': 'DOWN',
+        'DOWN': 'UP',
+        'LEFT': 'RIGHT',
+        'RIGHT': 'LEFT'
+      };
+      
+      if (newDirection !== oppositeDirections[gameState.direction]) {
+        gameState.nextDirection = newDirection;
+      }
+    }
+    
+    // 重置游戏状态
+    function resetGameState() {
+      // 初始化蛇
+      const centerX = Math.floor(gameState.gridWidth / 2);
+      const centerY = Math.floor(gameState.gridHeight / 2);
+      
+      gameState.snake = [
+        { x: centerX, y: centerY },
+        { x: centerX - 1, y: centerY },
+        { x: centerX - 2, y: centerY }
+      ];
+      
+      // 初始方向
+      gameState.direction = 'RIGHT';
+      gameState.nextDirection = 'RIGHT';
+      
+      // 分数和速度
+      gameState.score = 0;
+      gameState.speed = config.initialSpeed;
+      
+      // 生成食物
+      generateFood();
+      
+      // 游戏状态
+      gameState.isGameOver = false;
+      gameState.isPaused = false;
+      
+      // 清除爆炸效果
+      gameState.explosions = [];
+      
+      // 更新分数显示
+      updateScore();
+      
+      // 绘制游戏
+      drawGame();
+    }
+    
+    // 生成食物
+    function generateFood() {
+      let newFood;
+      
+      // 确保食物不与蛇身重叠
+      do {
+        newFood = {
+          x: Math.floor(Math.random() * gameState.gridWidth),
+          y: Math.floor(Math.random() * gameState.gridHeight)
+        };
+      } while (gameState.snake.some(segment => segment.x === newFood.x && segment.y === newFood.y));
+      
+      gameState.food = newFood;
+      
+      // 重置食物颜色索引
+      gameState.foodColorIndex = 0;
+      
+      // 启动食物闪烁计时器
+      if (gameState.foodBlinkTimer) {
+        clearInterval(gameState.foodBlinkTimer);
+      }
+      
+      gameState.foodBlinkTimer = setInterval(() => {
+        gameState.foodColorIndex = (gameState.foodColorIndex + 1) % config.foodColors.length;
+        if (!gameState.isGameOver && !gameState.isPaused) {
+          drawGame();
+        }
+      }, config.foodBlinkSpeed);
+    }
+    
+    // 开始游戏
+    function startGame() {
+      elements.startScreen.classList.add('hidden');
+      resetGameState();
+      gameLoop();
+    }
+    
+    // 重新开始游戏
+    function restartGame() {
+      elements.gameOverScreen.classList.add('hidden');
+      resetGameState();
+      gameLoop();
+    }
+    
+    // 游戏主循环
+    function gameLoop() {
+      if (gameState.isGameOver || gameState.isPaused) return;
+      
+      // 更新游戏状态
+      updateGame();
+      
+      // 绘制游戏
+      drawGame();
+      
+      // 设置下一次循环
+      gameState.gameLoop = setTimeout(gameLoop, gameState.speed);
+    }
+    
+    // 更新游戏状态
+    function updateGame() {
+      // 更新方向
+      gameState.direction = gameState.nextDirection;
+      
+      // 计算新的蛇头位置
+      const head = { ...gameState.snake[0] };
+      
+      switch (gameState.direction) {
+        case 'UP':
+          head.y -= 1;
+          break;
+        case 'DOWN':
+          head.y += 1;
+          break;
+        case 'LEFT':
+          head.x -= 1;
+          break;
+        case 'RIGHT':
+          head.x += 1;
+          break;
+      }
+      
+      // 检查碰撞
+      if (checkCollision(head)) {
+        endGame();
+        return;
+      }
+      
+      // 将新蛇头添加到蛇的前面
+      gameState.snake.unshift(head);
+      
+      // 检查是否吃到食物
+      if (head.x === gameState.food.x && head.y === gameState.food.y) {
+        // 增加分数
+        gameState.score += 10;
+        updateScore();
+        
+        // 增加速度
+        if (gameState.speed > config.minSpeed) {
+          gameState.speed -= config.speedIncrease;
+        }
+        
+        // 添加爆炸效果
+        addExplosion(head.x, head.y);
+        
+        // 生成新的食物
+        generateFood();
+      } else {
+        // 移除蛇尾
+        gameState.snake.pop();
+      }
+      
+      // 更新爆炸效果
+      updateExplosions();
+    }
+    
+    // 检查碰撞
+    function checkCollision(head) {
+      // 检查边界碰撞
+      if (
+        head.x < 0 || 
+        head.x >= gameState.gridWidth || 
+        head.y < 0 || 
+        head.y >= gameState.gridHeight
+      ) {
+        return true;
+      }
+      
+      // 检查自身碰撞
+      for (let i = 1; i < gameState.snake.length; i++) {
+        if (head.x === gameState.snake[i].x && head.y === gameState.snake[i].y) {
+          return true;
+        }
+      }
+      
+      return false;
+    }
+    
+    // 添加爆炸效果（像素风格）
+    function addExplosion(x, y) {
+      // 创建像素爆炸效果的数据
+      const pixelExplosion = {
+        x,
+        y,
+        frame: 0,
+        maxFrames: 12, // 爆炸动画帧数
+        pixelSize: config.gridSize / 6, // 像素格子大小
+        color: '#ffffff', // 爆炸像素颜色
+        pixels: [] // 存储所有像素格子的位置和透明度
+      };
+      
+      // 初始化爆炸像素格子
+      // 根据爆炸中心位置生成3x3、5x5或7x7的像素格子矩阵
+      const gridSize = 2 + Math.floor(Math.random() * 3) * 2; // 3, 5, 或 7
+      const offset = Math.floor(gridSize / 2);
+      
+      for (let dy = -offset; dy <= offset; dy++) {
+        for (let dx = -offset; dx <= offset; dx++) {
+          // 计算每个像素格子的位置和初始透明度
+          pixelExplosion.pixels.push({
+            dx,
+            dy,
+            opacity: 1,
+            // 随机决定是否显示这个像素，创建不规则爆炸效果
+            visible: Math.random() > 0.2
+          });
+        }
+      }
+      
+      gameState.explosions.push(pixelExplosion);
+    }
+    
+    // 更新爆炸效果（像素风格）
+    function updateExplosions() {
+      for (let i = gameState.explosions.length - 1; i >= 0; i--) {
+        const explosion = gameState.explosions[i];
+        
+        // 增加帧数
+        explosion.frame++;
+        
+        // 更新每个像素格子的状态
+        explosion.pixels.forEach(pixel => {
+          if (pixel.visible) {
+            // 随着爆炸进行，像素透明度逐渐降低
+            // 距离中心越远的像素消失得越快
+            const distance = Math.sqrt(pixel.dx * pixel.dx + pixel.dy * pixel.dy);
+            const distanceFactor = 1 - (distance / Math.sqrt(2) / 3); // 根据最大爆炸范围调整
+            
+            // 计算透明度衰减，考虑帧数和距离因素
+                        
+            // 确保透明度不小于0
+            
+          }
+        });
+        
+        // 检查是否所有像素都已消失
+        const allPixelsInvisible = explosion.pixels.every(pixel => !pixel.visible);
+        
+        // 如果爆炸效果结束（帧数用完或所有像素消失），移除它
+        if (explosion.frame >= explosion.maxFrames || allPixelsInvisible) {
+          gameState.explosions.splice(i, 1);
+        }
+      }
+    }
+    
+    // 更新分数显示
+    function updateScore() {
+      elements.scoreElement.textContent = gameState.score;
+      elements.finalScoreElement.textContent = gameState.score;
+      
+      // 添加分数动画
+      elements.scoreElement.classList.add('animate-score-pop');
+      setTimeout(() => {
+        elements.scoreElement.classList.remove('animate-score-pop');
+      }, 500);
+    }
+    
+    // 切换暂停/继续
+    function togglePause() {
+      if (gameState.isGameOver) return;
+      
+      gameState.isPaused = !gameState.isPaused;
+      
+      if (!gameState.isPaused) {
+        gameLoop();
+      }
+    }
+    
+    // 结束游戏
+    function endGame() {
+      gameState.isGameOver = true;
+      clearInterval(gameState.foodBlinkTimer);
+      elements.gameOverScreen.classList.remove('hidden');
+    }
+    
+    // 绘制游戏
+    function drawGame() {
+      const ctx = gameState.ctx;
+      const gridSize = config.gridSize;
+      
+      // 清除画布
+      ctx.clearRect(0, 0, gameState.canvas.width, gameState.canvas.height);
+      
+      // 绘制蛇
+      drawSnake(ctx, gridSize);
+      
+      // 绘制食物
+      drawFood(ctx, gridSize);
+      
+      // 绘制爆炸效果
+      drawExplosions(ctx, gridSize);
+      
+      // 如果游戏暂停，绘制暂停提示
+      if (gameState.isPaused) {
+        drawPauseScreen(ctx);
+      }
+    }
+    
+    // 绘制蛇
+    function drawSnake(ctx, gridSize) {
+      const snakeLength = gameState.snake.length;
+      
+      gameState.snake.forEach((segment, index) => {
+        // 根据蛇的长度和位置选择颜色
+        const colorIndex = Math.floor((gameState.score / 10 + index / snakeLength) % config.snakeColors.length);
+        const color = config.snakeColors[colorIndex];
+        
+        // 根据位置选择半调图案
+        const patternIndex = index % halftonePatterns.length;
+        const pattern = halftonePatterns[patternIndex];
+        
+        // 绘制蛇段
+        ctx.fillStyle = color;
+        ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+        
+        // 如果是蛇头，添加高亮效果
+        if (index === 0) {
+          ctx.strokeStyle = 'rgba(255, 255, 255, 1)';
+          ctx.lineWidth = 2;
+          ctx.strokeRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+        }
+        
+        // 添加半调图案
+        if (pattern) {
+          // 创建半调图案
+          const patternCanvas = document.createElement('canvas');
+          patternCanvas.width = gridSize;
+          patternCanvas.height = gridSize;
+          const patternCtx = patternCanvas.getContext('2d');
+          
+          // 根据图案类型绘制不同的半调效果
+          if (pattern === 'half-tone') {
+            drawHalftonePattern(patternCtx, gridSize, 4, 1);
+          } else if (pattern === 'half-tone-dense') {
+            drawHalftonePattern(patternCtx, gridSize, 2, 1);
+          } else if (pattern === 'half-tone-sparse') {
+            drawHalftonePattern(patternCtx, gridSize, 6, 1);
+          }
+          
+          // 创建图案
+          const texture = ctx.createPattern(patternCanvas, 'repeat');
+          
+          // 绘制图案
+          ctx.fillStyle = texture;
+          ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+        }
+      });
+    }
+    
+    // 绘制半调图案（有序格子状分布）
+    function drawHalftonePattern(ctx, size, dotSize, opacity) {
+      ctx.fillStyle = `rgba(0, 0, 0, ${opacity})`;
+      
+      for (let y = 0; y < size; y += dotSize) {
+        for (let x = 0; x < size; x += dotSize) {
+          // 计算正方形大小（约为点间距的1/3）
+          const squareSize = dotSize /3;
+          
+          // 绘制正方形（有序排列，无随机性）
+          ctx.fillRect(
+            x + dotSize/2 - squareSize/2, 
+            y + dotSize/2 - squareSize/2, 
+            squareSize, 
+            squareSize
+          );
+        }
+      }
+    }
+    
+    // 绘制食物
+    function drawFood(ctx, gridSize) {
+      const food = gameState.food;
+      
+      // 检查是否有自定义食物图片
+      if (gameState.customFoodImage && gameState.customFoodImage.complete) {
+        // 绘制自定义食物图片
+        ctx.drawImage(
+          gameState.customFoodImage, 
+          food.x * gridSize, 
+          food.y * gridSize, 
+          gridSize, 
+          gridSize
+        );
+      } else {
+        // 使用像素风格樱桃图片
+        const cherryImage = new Image();
+        cherryImage.src = 'https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/42ba020e55fd44dd98d8ddcfc882b6ec.png~tplv-a9rns2rl98-image-qvalue.image?rcl=2025091814571282B9F17558F2AE9C3BEC&rk3s=8e244e95&rrcfp=b669a9d6&x-expires=1758265032&x-signature=H1vJ%2F1cJOsieMUfYgZVTepHJVt0%3D';
+        
+        // 直接绘制图片（如果已缓存）
+        if (cherryImage.complete) {
+          ctx.drawImage(cherryImage, food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+        } else {
+          // 使用备用方法绘制食物
+          const color = config.foodColors[gameState.foodColorIndex];
+          
+          // 绘制食物
+          ctx.fillStyle = color;
+          ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+          
+          // 添加闪烁效果
+          const gradient = ctx.createLinearGradient(
+            food.x * gridSize, 
+            food.y * gridSize, 
+            (food.x + 1) * gridSize, 
+            (food.y + 1) * gridSize
+          );
+          gradient.addColorStop(0, color);
+          gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+          
+          ctx.fillStyle = gradient;
+          ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+          
+          // 添加半调图案
+          const patternCanvas = document.createElement('canvas');
+          patternCanvas.width = gridSize;
+          patternCanvas.height = gridSize;
+          const patternCtx = patternCanvas.getContext('2d');
+          
+          drawHalftonePattern(patternCtx, gridSize, 6, 0.2);
+          
+          const texture = ctx.createPattern(patternCanvas, 'repeat');
+          ctx.fillStyle = texture;
+          ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+        }
+      }
+    }
+    
+    // 绘制爆炸效果（像素风格）
+    function drawExplosions(ctx, gridSize) {
+      gameState.explosions.forEach(explosion => {
+        // 计算爆炸中心位置（像素坐标）
+        const centerX = (explosion.x + 0.5) * gridSize;
+        const centerY = (explosion.y + 0.5) * gridSize;
+        
+        // 绘制每个像素格子
+        explosion.pixels.forEach(pixel => {
+          if (pixel.visible && pixel.opacity > 0) {
+            ctx.save();
+            
+            // 设置像素透明度
+            ctx.globalAlpha = pixel.opacity;
+            
+            // 设置像素颜色
+            ctx.fillStyle = explosion.color;
+            
+            // 计算像素格子的位置
+            // 根据帧数让像素向外扩散
+            const spreadFactor = 1 + (explosion.frame / explosion.maxFrames) * 2;
+            const pixelX = centerX + pixel.dx * explosion.pixelSize * spreadFactor;
+            const pixelY = centerY + pixel.dy * explosion.pixelSize * spreadFactor;
+            
+            // 绘制正方形像素格子
+            ctx.fillRect(
+              pixelX - explosion.pixelSize / 2,
+              pixelY - explosion.pixelSize / 2,
+              explosion.pixelSize,
+              explosion.pixelSize
+            );
+            
+            ctx.restore();
+          }
+        });
+      });
+    }
+    
+    // 绘制暂停屏幕
+    function drawPauseScreen(ctx) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.fillRect(0, 0, gameState.canvas.width, gameState.canvas.height);
+      
+      ctx.font = '40px VT323, monospace';
+      ctx.fillStyle = '#ffeb3b';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('暂停', gameState.canvas.width / 2, gameState.canvas.height / 2);
+      
+      ctx.font = '20px VT323, monospace';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText('按空格键继续', gameState.canvas.width / 2, gameState.canvas.height / 2 + 50);
+    }
+    
+    // 初始化游戏
+    window.addEventListener('load', initGame);
+  </script>
+
+
+</body></html>
