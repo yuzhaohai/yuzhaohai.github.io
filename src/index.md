@@ -163,4 +163,4 @@ function cmCopied(){
 ## <i class="fas fa-flag"></i> 个人探索
 
 [个人博客](https://yuzhaohai.github.io/blog/)<br>
-[JSON 树视图](https://yuzhaohai.github.io/static/awesome/json-tree.html)<br>
+[JSON 树视图](https://yuzhaohai.github.io/html/awsome/json-tree.html)<br>
