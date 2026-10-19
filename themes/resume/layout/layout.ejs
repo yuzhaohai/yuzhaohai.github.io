@@ -32,12 +32,12 @@
       <% }) %>
     <% } %>
 
-    <!-- 深色模式初始化（防闪烁，需在样式加载前执行） -->
+    <!-- 深色模式初始化（防闪烁，需在样式加载前执行），默认深色 -->
     <script>
       (function () {
         var t = localStorage.getItem('theme');
         if (t !== 'dark' && t !== 'light') {
-          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          t = 'dark';
         }
         document.documentElement.setAttribute('data-theme', t);
       })();
@@ -71,9 +71,6 @@
     <div id="main" class="fix-sidebar">
       <%- body %>
     </div>
-    <button id="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
-      <i class="fas fa-moon"></i>
-    </button>
     <script>
       (function () {
         var btn = document.getElementById('theme-toggle');
