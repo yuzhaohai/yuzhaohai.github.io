@@ -32,6 +32,17 @@
       <% }) %>
     <% } %>
 
+    <!-- 深色模式初始化（防闪烁，需在样式加载前执行） -->
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
     <% if (theme.cdn.fancybox && theme.cdn.fancybox.css) { %>
       <%- css(theme.cdn.fancybox.css) %>
@@ -60,6 +71,44 @@
     <div id="main" class="fix-sidebar">
       <%- body %>
     </div>
+    <button id="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式">
+      <i class="fas fa-moon"></i>
+    </button>
+    <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        var icon = btn.querySelector('i');
+        var mql = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+        function current() {
+          return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        }
+        function render(t) {
+          icon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        render(current());
+        btn.addEventListener('click', function () {
+          var next = current() === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          document.documentElement.setAttribute('data-theme', next);
+          render(next);
+        });
+        if (mql) {
+          var onSystemChange = function (e) {
+            // 未手动选择过主题时跟随系统
+            if (!localStorage.getItem('theme')) {
+              var t = e.matches ? 'dark' : 'light';
+              document.documentElement.setAttribute('data-theme', t);
+              render(t);
+            }
+          };
+          if (mql.addEventListener) {
+            mql.addEventListener('change', onSystemChange);
+          } else if (mql.addListener) {
+            mql.addListener(onSystemChange);
+          }
+        }
+      })();
+    </script>
     <% if (theme.cdn.smooth_scroll) { %>
       <%- js(theme.cdn.smooth_scroll) %>
     <% } else { %>

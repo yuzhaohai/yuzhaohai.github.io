@@ -1,0 +1,181 @@
+// Dark mode
+// 通过 <html data-theme="dark"> 启用，由 layout.ejs 中的脚本控制
+
+$dm-bg        = #17191c
+$dm-surface   = #20242a
+$dm-surface2  = #272c33
+$dm-border    = #3a4149
+$dm-text      = #c8cfd8
+$dm-heading   = #e6ebf1
+$dm-muted     = #8b949e
+$dm-code-text = #f0a35e
+
+// 主题切换按钮（两种模式下都显示）
+#theme-toggle
+  position: fixed
+  right: 24px
+  bottom: 24px
+  z-index: 99
+  width: 44px
+  height: 44px
+  padding: 0
+  border: none
+  border-radius: 50%
+  cursor: pointer
+  background: $color_theme
+  color: #fff
+  font-size: 18px
+  line-height: 44px
+  text-align: center
+  box-shadow: $box-shadow-float
+  transition_all()
+  &:hover
+    transform: scale(1.1)
+  &:focus
+    outline: none
+
+// 切换时平滑过渡
+body
+  transition: background-color .3s ease, color .3s ease
+
+html[data-theme='dark']
+  color-scheme: dark
+
+  body
+    color: $dm-text
+    background-color: $dm-bg
+
+  hr
+    border-bottom-color: rgba(255,255,255,0.12)
+
+  a
+    color: $dm-text
+
+  h1, h2, h3, h4, strong
+    color: $dm-heading
+
+  em
+    color: $dm-muted
+
+  code
+    color: $dm-code-text
+    background-color: $dm-surface2
+    border-color: $dm-border
+
+  // 代码块
+  .highlight
+    background-color: $dm-surface2
+    .gutter
+      background: rgba(0,0,0,0.3)
+      pre
+        color: rgba(255,255,255,0.35)
+    .code
+      pre
+        background: $dm-surface2
+        color: $dm-text
+      &.code:before
+        color: rgba(255,255,255,0.4)
+  pre
+    color: $dm-text
+    .class .title
+      color: $dm-heading
+    .tag, .tag .title, .change, .winutils, .flow, .lisp .title, .clojure .built_in, .nginx .title, .tex .special
+      color: #5ea3e0
+    .comment, .java .annotation, .python .decorator, .template_comment, .pi, .doctype, .deletion, .shebang, .apache .sqbracket, .tex .formula
+      color: #7d8590
+
+  // 顶部导航 / 移动栏
+  #header
+    background-color: $dm-surface
+    @media screen and (min-width: 1590px)
+      background-color: rgba(32,36,42,.85)
+  #mobile-bar
+    background-color: $dm-surface
+    .nav-title
+      color: $dm-heading
+  #nav
+    .nav-dropdown
+      background-color: $dm-surface2
+      border-color: $dm-border
+      h4
+        color: rgba(230,235,241,0.45)
+        border-top-color: $dm-border
+      a
+        color: $dm-text
+        &:hover
+          color: $color_theme
+  .search-query
+    background-color: $dm-surface2
+    border-color: $dm-border
+    color: $dm-heading
+
+  // 侧边栏
+  .sidebar
+    .sidebar-inner
+      .footer
+        background: $dm-bg
+    .sidebar-link
+      color: $dm-muted
+      &.current
+        color: $color_theme
+  @media screen and (max-width: 900px)
+    .sidebar
+      background-color: $dm-surface
+
+  // 正文
+  .content
+    h2
+      border-bottom-color: $dm-border
+      a
+        color: $dm-heading
+    h2, h3
+      a, button
+        color: $dm-heading
+    h3
+      a, button
+        color: $color_theme
+    h4
+      color: $dm-text
+    ul.pure
+      li
+        a
+          color: $dm-text
+    blockquote
+      background-color: rgba(33,150,243,0.12)
+    > table
+      td, th
+        border-color: $dm-border
+      th, tr:nth-child(2n)
+        background-color: $dm-surface
+        code
+          background-color: $dm-surface2
+    p
+      &.tip, &.success
+        background-color: $dm-surface
+        code
+          background-color: $dm-surface2
+        em
+          color: $dm-text
+      &.tip
+        background-color: rgba(254,95,88,0.12)
+      &.success
+        background-color: rgba(61,197,80,0.12)
+    .resume-header
+      background: $dm-surface
+    btns
+      a
+        color: $dm-text
+    .readmore
+      background-color: rgba(82,161,248,0.12)
+    .footer
+      color: $dm-muted
+      border-top-color: $dm-border
+    .resume-footer
+      color: $dm-muted
+      a
+        color: $dm-muted
+
+  #footer
+    color: $dm-muted
+    a
+      color: $dm-muted
